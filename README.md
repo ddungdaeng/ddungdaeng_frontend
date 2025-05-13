@@ -8,7 +8,7 @@ React-Native 기반 반려견 건강관리 앱 '뚱댕이' 프론트엔드
 - `dev`: 모든 기능을 통합하는 개발 브랜치
 - `feature/*`: 기능 단위 작업 브랜치  
   예: `feature/login`, `feature/group-ui`
-
+"main 브랜치는 직접 push 금지, PR만 허용"
 ---
 
 ## ✅ 커밋 컨벤션
