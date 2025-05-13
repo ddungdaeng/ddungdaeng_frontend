@@ -1,26 +1,42 @@
-# ddungdaeng_frontend
-React-Native 기반 반려견 건강관리 앱 프론트엔드
-
-## 🛠 기술 스택
-- React Native
-- TypeScript
-- Recoil or Zustand (선택)
-- Axios
+# ddungdaeng_frontend  
+React-Native 기반 반려견 건강관리 앱 '뚱댕이' 프론트엔드
+---
 
 ## 📂 브랜치 전략
-- main: 배포 브랜치
-- dev: 통합 개발 브랜치
-- feature/*: 기능 단위 작업 브랜치
+
+- `main`: 배포 브랜치 (안정된 코드만 존재)
+- `dev`: 모든 기능을 통합하는 개발 브랜치
+- `feature/*`: 기능 단위 작업 브랜치  
+  예: `feature/login`, `feature/group-ui`
+
+---
 
 ## ✅ 커밋 컨벤션
-- feat: 기능 추가
-- fix: 버그 수정
-- chore: 설정, 빌드
-- docs: 문서 변경
-- refactor: 리팩토링
-예: `feat: 그룹 페이지 UI 작성`
+
+- `feat`: 기능 추가  
+- `fix`: 버그 수정  
+- `chore`: 설정 파일, 빌드, 환경설정 등  
+- `docs`: 문서 관련 변경  
+- `refactor`: 리팩토링 (기능 변화 없음)
+
+**예시:**  
+`feat: 그룹 페이지 UI 작성`  
+`fix: 로그인 시 토큰 오류 수정`
+
+---
 
 ## ⛳ 협업 규칙
-- `dev` 기준으로 PR → 리뷰 후 `main`에 병합
-- PR 제목: 작업 목적 명확하게
-- 기능 구현 후 반드시 `리뷰 → merge` 절차
+
+1. 각자 `feature/기능명` 브랜치에서 작업합니다.
+2. 작업이 끝나면 `dev` 브랜치로 Pull Request(PR)를 보냅니다.
+3. PR 제목은 작업 내용을 명확히 적습니다.  
+   예: `feat: 가족 공유 추가`
+4. 팀원 또는 PM이 코드를 리뷰한 후 `dev`에 병합합니다.
+5. `dev` 브랜치가 충분히 안정되면 `main`으로 병합하여 배포합니다.
+
+---
+
+## 📌 참고 사항
+
+- `.env`, `node_modules`, `build` 폴더 등은 `.gitignore`에 반드시 포함되어야 합니다.
+- `main` 브랜치는 직접 커밋하지 않고, **반드시 PR을 통해서만 반영**합니다.
