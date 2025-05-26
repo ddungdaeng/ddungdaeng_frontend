@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import TodayWeight from "../screens/tabs/TodayWeight";
-import TodayFood from "../screens/tabs/TodayFood";
 import TodayWalk from "../screens/tabs/TodayWalk";
+import TodayFood from "../screens/tabs/TodayFood";
 
 const Tab = createBottomTabNavigator();
 

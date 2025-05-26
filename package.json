@@ -19,11 +19,15 @@
     "react-native": "0.79.2",
     "react-native-pager-view": "^6.7.1",
     "react-native-safe-area-context": "^5.4.0",
-    "react-native-screens": "~4.10.0",
-    "styled-components": "^6.1.18"
+    "react-native-screens": "~4.10.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@react-native/typescript-config": "^0.79.2",
+    "@types/jest": "^29.5.14",
+    "@types/react": "^19.1.5",
+    "@types/react-test-renderer": "^19.1.0",
+    "typescript": "^5.8.3"
   },
   "private": true
 }

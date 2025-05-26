@@ -5,12 +5,7 @@ export default function TodayWeight({ navigation: { navigate } }) {
   return (
     <TouchableOpacity
       onPress={() => navigate("TopTabs", { screen: "Dashboard" })}
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        paddingBottom: 50,
-        alignItems: "center",
-      }}
+      style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
     >
       <Text>TodayWeight</Text>
     </TouchableOpacity>
