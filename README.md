@@ -1,27 +1,26 @@
-# ddungdaeng_frontend  
-React-Native 기반 반려견 건강관리 앱 '뚱댕이' 프론트엔드
----
+# ddungdaeng_frontend
+
+## React-Native 기반 반려견 건강관리 앱 '뚱댕이' 프론트엔드
 
 ## 📂 브랜치 전략
 
 - `main`: 배포 브랜치 (안정된 코드만 존재)
 - `dev`: 모든 기능을 통합하는 개발 브랜치
 - `feature/*`: 기능 단위 작업 브랜치  
-  예: `feature/login`, `feature/group-ui`
-"main 브랜치는 직접 push 금지, PR만 허용"
+   예: `feature/login`, `feature/group-ui`
+  "main 브랜치는 직접 push 금지, PR만 허용"
+
 ---
 
 ## ✅ 커밋 컨벤션
 
-- `feat`: 기능 추가  
-- `fix`: 버그 수정  
-- `chore`: 설정 파일, 빌드, 환경설정 등  
-- `docs`: 문서 관련 변경  
-- `refactor`: 리팩토링 (기능 변화 없음)
-
-**예시:**  
-`feat: 그룹 페이지 UI 작성`  
-`fix: 로그인 시 토큰 오류 수정`
+- `✨feat`: 기능 추가
+- `🔧fix`: 버그 수정
+- `📝docs`: 문서 관련 변경
+- `🎨style`: 코드 포맷팅, 세미콜론 누락 등 비즈니스 로직에 영향을 주지 않는 변경
+- `♻️refactor`: 리팩토링 (기능 변화 없음)
+- `📄chore`: 설정 파일, 빌드, 환경설정 등
+- `test`: 테스트 추가 또는 수정
 
 ---
 
