@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 
-import Root from "./navigation/Roots";
+import Root from "./src/navigation/Roots";
 
 export default function App() {
   //todo: pretendard 적용

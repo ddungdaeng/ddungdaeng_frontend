@@ -1,7 +1,7 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import Dashboard from "../screens/topTabs/Dashboard";
-import Detail from "../screens/topTabs/Detail";
-import Change from "../screens/topTabs/Change";
+import Dashboard from "../screens/home/Dashboard";
+import Detail from "../screens/home/Detail";
+import Change from "../screens/home/Change";
 import colors from "../colors";
 
 const TopTab = createMaterialTopTabNavigator();
