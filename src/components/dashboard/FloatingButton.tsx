@@ -1,7 +1,7 @@
 import { TouchableOpacity, StyleSheet, Dimensions } from "react-native";
-import colors from "../colors";
-import Write from "../assets/ic-write.svg";
-import Cancel from "../assets/ic-cancel.svg";
+import colors from "../../colors";
+import Write from "../../assets/ic-write.svg";
+import Cancel from "../../assets/ic-cancel.svg";
 
 export default function FloatingButton({
   onPress,
