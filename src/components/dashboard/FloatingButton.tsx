@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import colors from "../../colors";
 import Write from "../../assets/ic-write.svg";
 import Cancel from "../../assets/ic-cancel.svg";
+import shadows from "../../shadow";
 
 export default function FloatingButton({
   onPress,
@@ -37,9 +38,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.black,
 
     //그림자 있어도 이쁠듯
-    // shadowColor: colors.black,
-    // shadowOpacity: 0.1,
-    // shadowRadius: 10,
-    // elevation: 4,
+    ...shadows.light
   },
 });

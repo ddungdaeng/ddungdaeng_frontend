@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { ScrollView, View, StyleSheet } from "react-native";
 import Character from "../../assets/character.svg";
 import FloatingButton from "../../components/dashboard/FloatingButton";
 import ActionSheetMenu from "../../components/dashboard/ActionSheetMenu";
 import colors from "../../colors";
 import InputModal from "../../components/dashboard/InputModal";
+import SummaryCardList from "../../components/dashboard/SummaryCardList";
+import BasicCard from "../../components/BasicCard";
 
 type SelectedItem = {
   type: "input" | "load";
@@ -34,27 +36,31 @@ export default function Dashboard() {
     setMenuVisible(false);
     setSelected({ type, category, label });
   };
-  console.log("selected:", selected);
 
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: colors.white,
-      }}
-    >
-      <Character width={200} height={200} />
+    <View style={{ flex: 1, backgroundColor: colors.white }}>
+      <ScrollView 
+        style={{ flex: 1 }}
+        contentContainerStyle={styles.contentContainer}
+        showsVerticalScrollIndicator={false}
+      >
+        <Character width={200} height={200} />
+        <BasicCard style={styles.chartCard}/>
+        <SummaryCardList style={styles.summaryCard}/>
+        <BasicCard style={styles.reportCard} />
+      </ScrollView>
+
       <FloatingButton
         onPress={() => setMenuVisible(true)}
         isMenuOpen={menuVisible}
       />
+      
       <ActionSheetMenu
         isMenuOpen={menuVisible}
-        onClose={() => setMenuVisible(false)} //배경 누르면 실행될 함수
-        onSelect={handleSelect} //메뉴 항목 선택했을 때 실행될 콜백 함수
+        onClose={() => setMenuVisible(false)}
+        onSelect={handleSelect}
       />
+      
       {selected?.type === "input" && (
         <InputModal
           visible={true}
@@ -66,3 +72,23 @@ export default function Dashboard() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  scrollView: {
+    flex: 1
+  },
+  contentContainer: {
+    alignItems: "center",
+    paddingHorizontal: 43,
+    paddingVertical: 24
+  },
+  chartCard: {
+    marginTop: 21 ,
+  },
+  summaryCard: {
+    marginTop: 21 ,
+  },
+  reportCard: {
+    marginTop: 21
+  }
+});

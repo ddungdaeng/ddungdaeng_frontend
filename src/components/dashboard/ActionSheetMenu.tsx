@@ -2,6 +2,7 @@ import React from "react";
 import { Modal, Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import colors from "../../colors";
+import shadows from "../../shadow";
 
 type ActionSheetMenuProps = {
   isMenuOpen: boolean;
@@ -93,13 +94,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 6,
     paddingHorizontal: 16,
-   
-    //ios 그림자
-    shadowColor: colors.black,
-    shadowOpacity: 0.1,
-    shadowRadius: 10, //그림자의 블러 정도
-    //android 그림자
-    elevation: 4,
+   ...shadows.light
   },
   option: {
     paddingVertical: 12,
