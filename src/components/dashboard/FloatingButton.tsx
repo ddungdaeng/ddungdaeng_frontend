@@ -1,4 +1,6 @@
 import { TouchableOpacity, StyleSheet, Dimensions } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
 import colors from "../../colors";
 import Write from "../../assets/ic-write.svg";
 import Cancel from "../../assets/ic-cancel.svg";
@@ -10,8 +12,10 @@ export default function FloatingButton({
   onPress: () => void;
   isMenuOpen: boolean;
 }) {
+  const insets = useSafeAreaInsets();
+
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <TouchableOpacity style={[styles.button, {bottom: insets.bottom + 30}]} onPress={onPress}>
       {isMenuOpen ? (
         <Cancel width={17.5} height={17.5} />
       ) : (
@@ -26,11 +30,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
-    bottom: 92,
     right: 23,
     width: 64,
     height: 64,
     borderRadius: 10,
     backgroundColor: colors.black,
+
+    //그림자 있어도 이쁠듯
+    // shadowColor: colors.black,
+    // shadowOpacity: 0.1,
+    // shadowRadius: 10,
+    // elevation: 4,
   },
 });
