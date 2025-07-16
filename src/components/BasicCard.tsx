@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, ViewStyle } from "react-native";
 import shadows from "../shadow";
 import colors from "../colors";
+import CustomText from "./common/CustomText";
 
 type BasicCardListProps = {
     style?: ViewStyle;
@@ -9,7 +10,7 @@ type BasicCardListProps = {
 export default function BasicCard({style}: BasicCardListProps){
     return(
         <View style={[styles.container, style]}>
-            <Text style={{color: colors.gray2}}>아직 등록된 데이터가 없어요!</Text>  
+            <CustomText style={styles.text}>아직 등록된 데이터가 없어요!</CustomText>
         </View>
     )
 }
@@ -25,5 +26,9 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         paddingHorizontal: 21,
         ...shadows.basic
+    },
+    text:{
+        fontSize: 14,
+        color: colors.gray2
     }
 }) 

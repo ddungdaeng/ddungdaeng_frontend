@@ -3,6 +3,7 @@ import { Modal, Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import colors from "../../colors";
 import shadows from "../../shadow";
+import CustomText from "../common/CustomText";
 
 type ActionSheetMenuProps = {
   isMenuOpen: boolean;
@@ -28,7 +29,7 @@ export default function ActionSheetMenu({
 
   const Option = ({ label, onPress }: OptionProps) => (
     <TouchableOpacity style={styles.option} onPress={onPress}>
-      <Text style={styles.optionText}>{label}</Text>
+      <CustomText style={styles.optionText}>{label}</CustomText>
     </TouchableOpacity>
   );
 
@@ -101,6 +102,5 @@ const styles = StyleSheet.create({
   },
   optionText: {
     fontSize: 10,
-    color: colors.black,
   },
 });

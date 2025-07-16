@@ -1,7 +1,8 @@
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import colors from "../../colors";
 import shadows from "../../shadow";
 import { LinearGradient } from 'expo-linear-gradient'
+import CustomText from "../common/CustomText";
 
 type SummaryCardProps ={
     category: string,
@@ -17,9 +18,9 @@ export default function SummaryCard({category, data, recent, icon}: SummaryCardP
 
         <LinearGradient colors={["#BCFFFE", colors.primary1]} style={styles.layout}>
         <View style={styles.card}>
-            <Text style={styles.category}>{category}</Text>
-            <Text style={styles.data}>{data}</Text>
-            <Text style={styles.recent}>{recent}</Text>
+            <CustomText style={styles.category}>{category}</CustomText>
+            <CustomText w="medium"  style={styles.data}>{data}</CustomText>
+            <CustomText style={styles.recent}>{recent}</CustomText>
             <View style={styles.iconContainer}>
                 {icon}
             </View>
@@ -57,7 +58,6 @@ const styles = StyleSheet.create({
     },
     data: {
         fontSize: 24,
-        fontWeight: "500",
         color: colors.black,
         marginBottom: 2,
     },

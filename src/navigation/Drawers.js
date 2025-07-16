@@ -2,10 +2,13 @@ import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import TopTabs from "./TopTabs";
 import Settings from "../screens/Settings";
-import Profile from "../screens/Profile";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import colors from "../colors";
+import Mypage from "../screens/Mypage";
+import FamilyMemberManagement from "../screens/FamilyMemberManagement";
+import HealthReportCollection from "../screens/HealthReportCollection";
+import DogProfileManagement from "../screens/DogProfileManagement";
 
 const Drawer = createDrawerNavigator();
 
@@ -48,17 +51,33 @@ const Drawers = () => {
       <Drawer.Screen
         name="TopTabs"
         component={TopTabs}
-        options={{ title: "홈" }}
+        options={{ title: "홈", drawerItemStyle: { display: "none" } // 드로어에서 숨김 
+        }}
+      />
+      <Drawer.Screen
+        name="DogProfileManagement"
+        component={DogProfileManagement}
+        options={{ title: "반려견 프로필 관리" }}
+      />
+      <Drawer.Screen
+        name="FamilyMemberManagement"
+        component={FamilyMemberManagement}
+        options={{ title: "가족 구성원 관리" }}
+      />
+      <Drawer.Screen
+        name="HealthReportCollection"
+        component={HealthReportCollection}
+        options={{ title: "건강 리포트 모아보기" }}
+      />
+      <Drawer.Screen
+        name="Mypage"
+        component={Mypage}
+        options={{ title: "마이페이지" }}
       />
       <Drawer.Screen
         name="Settings"
         component={Settings}
         options={{ title: "설정" }}
-      />
-      <Drawer.Screen
-        name="Profile"
-        component={Profile}
-        options={{ title: "프로필" }}
       />
     </Drawer.Navigator>
   );

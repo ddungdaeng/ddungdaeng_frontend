@@ -4,6 +4,7 @@ import colors from "../../colors";
 import MealDog from "../../assets/mealCharacter.svg";
 import WalkDog from "../../assets/walkCharacter.svg";
 import WeightDog from "../../assets/weightCharacter.svg";
+import CustomText from "../common/CustomText";
 
 type CategoryType = "weight" | "meal" | "walk";
 
@@ -58,7 +59,7 @@ export default function InputModal({
       <View style={styles.overlay}>
         <View style={styles.modal}>
           <ImageLoad />
-          <Text style={styles.title}>{label}</Text>
+          <CustomText w="semibold" style={styles.title}>{label}</CustomText>
           <TextInput
             style={styles.input}
             selectionColor={colors.primary1} //커서 색깔
@@ -96,7 +97,6 @@ const styles = StyleSheet.create({
   title: {
     marginTop: 4,
     fontSize: 22,
-    fontWeight: "bold",
   },
   input: {
     width: 304,
@@ -109,5 +109,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
+    fontSize: 16,
+    fontFamily: "Pretendard-Regular"
   },
 });
