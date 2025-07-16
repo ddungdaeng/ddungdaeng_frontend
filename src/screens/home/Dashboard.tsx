@@ -5,8 +5,9 @@ import ActionSheetMenu from "../../components/dashboard/ActionSheetMenu";
 import colors from "../../colors";
 import InputModal from "../../components/dashboard/InputModal";
 import SummaryCardList from "../../components/dashboard/SummaryCardList";
-import BasicCard from "../../components/BasicCard";
 import CharacterLoad from "../../components/dashboard/CharacterLoad";
+import WeightChart from "../../components/dashboard/WeightChart";
+import ThisWeekHealthReport from "../../components/ThisWeekHealthReport";
 
 type SelectedItem = {
   type: "input" | "load";
@@ -39,28 +40,28 @@ export default function Dashboard() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.white }}>
-      <ScrollView 
+      <ScrollView
         style={{ flex: 1 }}
         contentContainerStyle={styles.contentContainer}
         showsVerticalScrollIndicator={false}
       >
         <CharacterLoad />
-        <BasicCard style={styles.chartCard}/>
-        <SummaryCardList style={styles.summaryCard}/>
-        <BasicCard style={styles.reportCard} />
+        <WeightChart />
+        <SummaryCardList />
+        <ThisWeekHealthReport />
       </ScrollView>
 
       <FloatingButton
         onPress={() => setMenuVisible(true)}
         isMenuOpen={menuVisible}
       />
-      
+
       <ActionSheetMenu
         isMenuOpen={menuVisible}
         onClose={() => setMenuVisible(false)}
         onSelect={handleSelect}
       />
-      
+
       {selected?.type === "input" && (
         <InputModal
           visible={true}
@@ -75,20 +76,12 @@ export default function Dashboard() {
 
 const styles = StyleSheet.create({
   scrollView: {
-    flex: 1
+    flex: 1,
   },
   contentContainer: {
     alignItems: "center",
     paddingHorizontal: 43,
-    paddingVertical: 24
+    paddingVertical: 24,
+    gap: 21,
   },
-  chartCard: {
-    marginTop: 21,
-  },
-  summaryCard: {
-    marginTop: 21,
-  },
-  reportCard: {
-    marginTop: 21
-  }
 });

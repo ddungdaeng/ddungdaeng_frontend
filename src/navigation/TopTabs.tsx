@@ -14,7 +14,7 @@ const TopTabs = () => {
           elevation: 0, // Android 그림자 제거
           shadowOpacity: 0, // iOS 그림자 제거
         },
-        tabBarLabelStyle: { fontSize: 20, fontFamily:"Pretendard-Medium"},
+        tabBarLabelStyle: { fontSize: 20, fontFamily: "Pretendard-Medium" },
         tabBarIndicatorStyle: { backgroundColor: colors.primary1, height: 3 },
       }}
     >
