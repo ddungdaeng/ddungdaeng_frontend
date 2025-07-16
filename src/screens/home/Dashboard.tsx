@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { ScrollView, View, StyleSheet } from "react-native";
-import Character from "../../assets/character.svg";
 import FloatingButton from "../../components/dashboard/FloatingButton";
 import ActionSheetMenu from "../../components/dashboard/ActionSheetMenu";
 import colors from "../../colors";
 import InputModal from "../../components/dashboard/InputModal";
 import SummaryCardList from "../../components/dashboard/SummaryCardList";
 import BasicCard from "../../components/BasicCard";
+import CharacterLoad from "../../components/dashboard/CharacterLoad";
 
 type SelectedItem = {
   type: "input" | "load";
@@ -44,7 +44,7 @@ export default function Dashboard() {
         contentContainerStyle={styles.contentContainer}
         showsVerticalScrollIndicator={false}
       >
-        <Character width={200} height={200} />
+        <CharacterLoad />
         <BasicCard style={styles.chartCard}/>
         <SummaryCardList style={styles.summaryCard}/>
         <BasicCard style={styles.reportCard} />
@@ -83,10 +83,10 @@ const styles = StyleSheet.create({
     paddingVertical: 24
   },
   chartCard: {
-    marginTop: 21 ,
+    marginTop: 21,
   },
   summaryCard: {
-    marginTop: 21 ,
+    marginTop: 21,
   },
   reportCard: {
     marginTop: 21
