@@ -2,13 +2,14 @@ import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import TopTabs from "./TopTabs";
 import Settings from "../screens/Settings";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import colors from "../colors";
 import Mypage from "../screens/Mypage";
 import FamilyMemberManagement from "../screens/FamilyMemberManagement";
 import HealthReportCollection from "../screens/HealthReportCollection";
 import DogProfileManagement from "../screens/DogProfileManagement";
+import CustomText from "../components/common/CustomText";
 
 const Drawer = createDrawerNavigator();
 
@@ -16,7 +17,9 @@ const Drawers = () => {
   const Header = ({ navigation }) => {
     return (
       <View style={styles.header}>
-        <Text style={styles.title}>LOGO</Text>
+        <TouchableOpacity onPress={()=> navigation.navigate("TopTabs", { screen: "대시보드" })}>
+          <CustomText w="bold" style={styles.title}>LOGO</CustomText>
+        </TouchableOpacity>
 
         <View style={styles.rightIcons}>
           {/*알람*/}
@@ -96,7 +99,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22,
-    fontWeight: "bold",
     color: colors.primary1,
   },
   rightIcons: {
