@@ -17,8 +17,12 @@ const Drawers = () => {
   const Header = ({ navigation }) => {
     return (
       <View style={styles.header}>
-        <TouchableOpacity onPress={()=> navigation.navigate("TopTabs", { screen: "대시보드" })}>
-          <CustomText w="bold" style={styles.title}>LOGO</CustomText>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("TopTabs", { screen: "대시보드" })}
+        >
+          <CustomText w="bold" style={styles.title}>
+            LOGO
+          </CustomText>
         </TouchableOpacity>
 
         <View style={styles.rightIcons}>
@@ -54,7 +58,9 @@ const Drawers = () => {
       <Drawer.Screen
         name="TopTabs"
         component={TopTabs}
-        options={{ title: "홈", drawerItemStyle: { display: "none" } // 드로어에서 숨김 
+        options={{
+          title: "홈",
+          drawerItemStyle: { display: "none" }, // 드로어에서 숨김
         }}
       />
       <Drawer.Screen

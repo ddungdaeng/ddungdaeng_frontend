@@ -8,7 +8,7 @@ const Nav = createNativeStackNavigator();
 
 const Root = () => {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.white}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
       <Nav.Navigator screenOptions={{ headerShown: false }}>
         <Nav.Screen name="Drawers" component={Drawers} />
       </Nav.Navigator>

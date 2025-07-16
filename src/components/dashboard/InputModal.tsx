@@ -59,7 +59,9 @@ export default function InputModal({
       <View style={styles.overlay}>
         <View style={styles.modal}>
           <ImageLoad />
-          <CustomText w="semibold" style={styles.title}>{label}</CustomText>
+          <CustomText w="semibold" style={styles.title}>
+            {label}
+          </CustomText>
           <TextInput
             style={styles.input}
             selectionColor={colors.primary1} //커서 색깔
@@ -110,6 +112,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     fontSize: 16,
-    fontFamily: "Pretendard-Regular"
+    fontFamily: "Pretendard-Regular",
   },
 });

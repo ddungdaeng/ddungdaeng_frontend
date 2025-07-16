@@ -40,7 +40,7 @@ export default function ActionSheetMenu({
         onPress={onClose}
         activeOpacity={1}
       >
-        <View style={[styles.container, {bottom: insets.bottom + 135}]}>
+        <View style={[styles.container, { bottom: insets.bottom + 135 }]}>
           <View style={styles.card}>
             <Option
               label="오늘의 체중 입력하기"
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 6,
     paddingHorizontal: 16,
-   ...shadows.light
+    ...shadows.light,
   },
   option: {
     paddingVertical: 12,

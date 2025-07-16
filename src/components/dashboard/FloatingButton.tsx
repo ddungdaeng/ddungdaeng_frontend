@@ -16,7 +16,10 @@ export default function FloatingButton({
   const insets = useSafeAreaInsets();
 
   return (
-    <TouchableOpacity style={[styles.button, {bottom: insets.bottom + 30}]} onPress={onPress}>
+    <TouchableOpacity
+      style={[styles.button, { bottom: insets.bottom + 30 }]}
+      onPress={onPress}
+    >
       {isMenuOpen ? (
         <Cancel width={17.5} height={17.5} />
       ) : (
@@ -38,6 +41,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.black,
 
     //그림자 있어도 이쁠듯
-    ...shadows.light
+    ...shadows.light,
   },
 });

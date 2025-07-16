@@ -21,12 +21,13 @@ const CustomText: React.FC<CustomTextProps> = ({
       case "semibold":
         return "Pretendard-Bold";
       default:
-        return "Pretendard-Regular"; 
+        return "Pretendard-Regular";
     }
   };
 
   return (
-    <Text style={[styles.defaultText, { fontFamily: getFontFamily() }, style]}
+    <Text
+      style={[styles.defaultText, { fontFamily: getFontFamily() }, style]}
       {...props}
     >
       {children}
