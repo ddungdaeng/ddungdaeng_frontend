@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet } from "react-native";
 import colors from "../../colors";
 import shadows from "../../shadow";
+import LinearGradient from "react-native-linear-gradient";
 
 type SummaryCardProps ={
     category: string,
@@ -12,6 +13,9 @@ type SummaryCardProps ={
 
 export default function SummaryCard({category, data, recent, icon}: SummaryCardProps){
     return(
+        <View style={styles.shadowWrapper}>
+
+        <LinearGradient colors={["#BCFFFE", colors.primary1]} style={styles.layout}>
         <View style={styles.card}>
             <Text style={styles.category}>{category}</Text>
             <Text style={styles.data}>{data}</Text>
@@ -20,20 +24,26 @@ export default function SummaryCard({category, data, recent, icon}: SummaryCardP
                 {icon}
             </View>
         </View>
+        </LinearGradient>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
-    card: {
+    shadowWrapper:{
+        ...shadows.basic
+    },
+    layout:{
         minWidth: 103,
         minHeight: 132,
-        backgroundColor: colors.primary1,
-        borderRadius: 10,
+        borderRadius: 10, 
         borderWidth: 0.5,
         borderColor: colors.white,
+
+    },
+    card: {
         padding: 14,
         justifyContent: 'space-between',
-        ...shadows.basic
     },
     iconContainer: {
         alignItems: "flex-end",
