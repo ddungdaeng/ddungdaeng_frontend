@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet } from "react-native";
 import colors from "../../colors";
 import shadows from "../../shadow";
-import LinearGradient from "react-native-linear-gradient";
+import { LinearGradient } from 'expo-linear-gradient'
 
 type SummaryCardProps ={
     category: string,

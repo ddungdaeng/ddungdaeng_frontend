@@ -1,4 +1,4 @@
-package com.ddungdaengfrontend
+package com.anonymous.ddungdaengfrontend
 
 import android.os.Build
 import android.os.Bundle
