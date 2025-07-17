@@ -41,18 +41,17 @@ const styles = StyleSheet.create({
     ...shadows.basic,
   },
   layout: {
-    minWidth: 103,
-    minHeight: 132,
+    width: 103,
+    height: 132,
     borderRadius: 10,
-    borderWidth: 0.5,
-    borderColor: colors.white,
   },
   card: {
     padding: 14,
     justifyContent: "space-between",
   },
   iconContainer: {
-    alignItems: "flex-end",
+    left: 28,
+    bottom: 7,
     justifyContent: "center",
     height: 40,
   },

@@ -1,9 +1,9 @@
 const shadows = {
   basic: {
-    shadowColor: '#000000',
+    shadowColor: "#000000",
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 9,
     },
     shadowOpacity: 0.2,
     shadowRadius: 10,
@@ -11,7 +11,7 @@ const shadows = {
   },
 
   light: {
-    shadowColor: '#000000',
+    shadowColor: "#000000",
     shadowOffset: {
       width: 0,
       height: 2,
