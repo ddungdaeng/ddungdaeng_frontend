@@ -1,59 +1,52 @@
-import { View, StyleSheet, ViewStyle, Dimensions } from "react-native";
+import { View, StyleSheet, ViewStyle } from "react-native";
 import shadows from "../../shadow";
 import colors from "../../colors";
-import { LineChart } from "react-native-gifted-charts";
+import { BarChart } from "react-native-gifted-charts";
 import CustomText from "../common/CustomText";
 
-type LineChartCardProps = {
+type BarChartCardProps = {
   style?: ViewStyle;
   data?: { value: number; date?: string; label?: string }[];
   title: string;
   maxValue: number;
-  startValue: number;
+  goalValue: number;
+  unit: string;
 };
 
-export default function LineChartCard({
+export default function BarChartCard({
   style,
   data,
   title,
   maxValue,
-  startValue,
-}: LineChartCardProps) {
-  const { width: screenWidth } = Dimensions.get("window");
-  const chartWidth = screenWidth - 48 - 90; // 총 여백을 한 번에 계산
+  goalValue,
+  unit,
+}: BarChartCardProps) {
   return (
     <View>
       <CustomText style={styles.title}>{title}</CustomText>
 
       <View style={[styles.card, style]}>
         {data ? (
-          <LineChart
+          <BarChart
             // isAnimated
-            animationDuration={1000}
+            barWidth={18}
+            maxValue={maxValue} //최대 값
+            noOfSections={3} //가로줄 몇 개 할 건지
+            hideRules
+            showReferenceLine1 //목표선(기준선)
+            referenceLine1Position={goalValue} //목표선(기준선) 값
+            referenceLine1Config={{
+              color: colors.gray3, //목표선(기준선) 색상
+            }}
+            barBorderRadius={4}
+            frontColor="lightgray"
             data={data}
-            maxValue={maxValue} // 최대값 설정(데이터 시작 지점에서 출발임: yAxisOffset)
-            yAxisOffset={startValue} //데이터 시작 지점
-            showValuesAsDataPointsText //점 위에 데이터 텍스트 표시
-            textColor1={colors.gray2}
-            thickness={2}
-            dataPointsColor1={colors.gray2} //점 색상
-            color={colors.gray2} //라인 색상
-            textShiftY={-7} //점 위에 데이터 텍스트 위치
-            textShiftX={-5}
-            startFillColor={"rgb(84,219,234)"}
-            endFillColor={"rgb(84,219,234)"}
-            startOpacity={0.4}
-            endOpacity={0.1}
-            xAxisColor={colors.gray4}
-            yAxisColor={colors.gray4}
-            yAxisLabelSuffix="kg" //단위
+            yAxisThickness={0}
+            xAxisThickness={0}
+            yAxisLabelSuffix={unit} //단위
+            // xy축 라벨 색상
             yAxisTextStyle={styles.textStyle}
             xAxisLabelTextStyle={styles.textStyle}
-            stepValue={0.3} // Y축 간격
-            yAxisThickness={0}
-            // 차트 크기 제어
-            width={chartWidth}
-            height={100}
           />
         ) : (
           <View
@@ -86,6 +79,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textStyle: {
+    color: colors.gray2,
+    fontSize: 10,
+    fontFamily: "Pretendard-Regular",
+  },
+  xAxisLabelTextStyle: {
     color: colors.gray2,
     fontSize: 10,
     fontFamily: "Pretendard-Regular",

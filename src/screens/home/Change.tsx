@@ -3,7 +3,12 @@ import { View, StyleSheet, ScrollView } from "react-native";
 import CustomText from "../../components/common/CustomText";
 import colors from "../../colors";
 import LineChartCard from "../../components/change/LineChartCard";
-import { weightData } from "../../components/common/mockupData";
+import {
+  barData,
+  walkData,
+  weightData,
+} from "../../components/common/mockupData";
+import BarChartCard from "../../components/change/BarChartCard";
 
 export default function Change() {
   return (
@@ -20,12 +25,33 @@ export default function Change() {
         {/* 방사형 차트 */}
 
         {/* 체중 변화 */}
-        <LineChartCard data={weightData} title="체중 변화" />
+        <LineChartCard
+          data={weightData}
+          title="체중 변화"
+          maxValue={1}
+          startValue={6}
+        />
+
         {/* 간식 횟수 변화 */}
+        <BarChartCard
+          data={barData}
+          title="간식 횟수 변화"
+          maxValue={3}
+          goalValue={2}
+          unit="개"
+        />
 
         {/* 루틴 기록율 변화 */}
-        <LineChartCard title="루틴 기록률 변화" />
+        <LineChartCard title="루틴 기록률 변화" maxValue={1} startValue={6} />
 
+        {/* 산책 횟수 변화 */}
+        <BarChartCard
+          data={walkData}
+          title="산책 횟수 변화"
+          maxValue={900}
+          goalValue={350}
+          unit="회"
+        />
         {/* 가족 참여율 */}
       </ScrollView>
     </View>

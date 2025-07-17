@@ -34,3 +34,23 @@ export const weightData = [
   { value: 6.5, label: "7/4" },
   { value: 7, label: "7/5" },
 ];
+
+export const barData = [
+  { value: 2, label: "M", frontColor: "#177AD5" },
+  { value: 1, label: "T" },
+  { value: 1, label: "W" },
+  { value: 2, label: "T", frontColor: "#177AD5" },
+  { value: 3, label: "F", frontColor: "#177AD5" },
+  { value: 2, label: "S", frontColor: "#177AD5" },
+  { value: 1, label: "S" },
+];
+
+export const walkData = [
+  { value: 250, label: "M" },
+  { value: 500, label: "T", frontColor: "#177AD5" },
+  { value: 745, label: "W", frontColor: "#177AD5" },
+  { value: 320, label: "T" },
+  { value: 600, label: "F", frontColor: "#177AD5" },
+  { value: 256, label: "S" },
+  { value: 300, label: "S" },
+];
