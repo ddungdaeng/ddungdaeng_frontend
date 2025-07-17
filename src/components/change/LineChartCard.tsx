@@ -23,7 +23,9 @@ export default function LineChartCard({
   const chartWidth = screenWidth - 48 - 90; // 총 여백을 한 번에 계산
   return (
     <View>
-      <CustomText style={styles.title}>{title}</CustomText>
+      <CustomText w="medium" style={styles.title}>
+        {title}
+      </CustomText>
 
       <View style={[styles.card, style]}>
         {data ? (

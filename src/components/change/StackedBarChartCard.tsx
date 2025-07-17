@@ -1,8 +1,8 @@
 import { View, StyleSheet, ViewStyle, Dimensions } from "react-native";
-import shadows from "../../shadow";
-import colors from "../../colors";
 import { BarChart } from "react-native-gifted-charts";
 import CustomText from "../common/CustomText";
+import colors from "../../styles/colors";
+import shadows from "../../styles/shadow";
 
 type StackBarDatum = {
   label: string;

@@ -4,10 +4,14 @@ import CustomText from "../../components/common/CustomText";
 import LineChartCard from "../../components/change/LineChartCard";
 import {
   barData,
+  // stackData,
   walkData,
   weightData,
 } from "../../components/common/mockupData";
 import BarChartCard from "../../components/change/BarChartCard";
+import StackedBarChartCard from "../../components/change/StackedBarChartCard";
+import RadarChartCard from "../../components/change/RadarChartCard";
+import colors from "../../styles/colors";
 
 export default function Change() {
   return (
@@ -22,6 +26,7 @@ export default function Change() {
         </CustomText>
 
         {/* 방사형 차트 */}
+        {/* <RadarChartCard /> */}
 
         {/* 체중 변화 */}
         <LineChartCard
@@ -52,6 +57,7 @@ export default function Change() {
           unit="회"
         />
         {/* 가족 참여율 */}
+        {/* <StackedBarChartCard data={stackData} title="가족 참여율" /> */}
       </ScrollView>
     </View>
   );

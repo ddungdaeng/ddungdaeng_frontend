@@ -1,7 +1,6 @@
 import MealIcon from "../../assets/ic-meal.svg";
 import WalkIcon from "../../assets/ic-walk.svg";
 import SnackIcon from "../../assets/ic-snack.svg";
-import colors from "../../colors";
 
 export const summaryData = [
   {
@@ -55,45 +54,3 @@ export const walkData = [
   { value: 256, label: "S" },
   { value: 300, label: "S" },
 ];
-
-export const stackData = [
-  {
-    stacks: [
-      { value: 20, color: colors.primary2 },
-      { value: 10, color: "#FFD1D8" },
-    ],
-    label: "M",
-  },
-  {
-    stacks: [
-      { value: 15, color: "#D4FFE5" },
-      { value: 10, color: colors.primary2 },
-      { value: 11, color: "#FFD1D8" },
-    ],
-    label: "T",
-  },
-  {
-    stacks: [
-      { value: 7, color: colors.primary2 },
-      { value: 14, color: "#FFD1D8" },
-    ],
-    label: "W",
-  },
-  {
-    stacks: [
-      { value: 10, color: "#D4FFE5" },
-      { value: 7, color: colors.primary2 },
-      { value: 11, color: "#FFD1D8" },
-    ],
-    label: "T",
-  },
-  {
-    stacks: [
-      { value: 20, color: colors.primary2 },
-      { value: 10, color: "#FFD1D8" },
-    ],
-    label: "F",
-  },
-];
-
-export const radarData = [70, 80, 60, 75, 65];
