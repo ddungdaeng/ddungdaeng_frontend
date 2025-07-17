@@ -25,3 +25,12 @@ export const summaryData = [
     icon: <SnackIcon />,
   },
 ];
+
+export const weightData = [
+  { value: 6, label: "6/30" },
+  { value: 6.4, label: "7/1" },
+  { value: 6.2, label: "7/2" },
+  { value: 6.7, label: "7/3" },
+  { value: 6.5, label: "7/4" },
+  { value: 7, label: "7/5" },
+];

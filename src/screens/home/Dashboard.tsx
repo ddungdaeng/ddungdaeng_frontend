@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { ScrollView, View, StyleSheet } from "react-native";
+
+import colors from "../../colors";
+import { weightData } from "../../components/dashboard/mockupData";
+
 import FloatingButton from "../../components/dashboard/FloatingButton";
 import ActionSheetMenu from "../../components/dashboard/ActionSheetMenu";
-import colors from "../../colors";
 import InputModal from "../../components/dashboard/InputModal";
 import SummaryCardList from "../../components/dashboard/SummaryCardList";
 import CharacterLoad from "../../components/dashboard/CharacterLoad";
@@ -46,13 +49,23 @@ export default function Dashboard() {
         contentContainerStyle={styles.contentContainer}
         showsVerticalScrollIndicator={false}
       >
+        {/* 유저 로드 */}
         <CharacterLoad />
+
+        {/* 프로그레스 바 */}
         <GoalWeightProgress goal={6} first={7} current={6.5} />
-        <WeightChart />
+
+        {/* 몸무게 차트 */}
+        <WeightChart data={weightData} />
+
+        {/* 요약 카드 */}
         <SummaryCardList />
+
+        {/* 이번주 건강 리포트 */}
         <ThisWeekHealthReport />
       </ScrollView>
 
+      {/* 버튼 */}
       <FloatingButton
         onPress={() => setMenuVisible(true)}
         isMenuOpen={menuVisible}
