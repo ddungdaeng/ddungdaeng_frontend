@@ -1,4 +1,4 @@
-import { View, StyleSheet, ViewStyle } from "react-native";
+import { View, StyleSheet, ViewStyle, Dimensions } from "react-native";
 import shadows from "../../shadow";
 import colors from "../../colors";
 import { BarChart } from "react-native-gifted-charts";
@@ -21,15 +21,20 @@ export default function BarChartCard({
   goalValue,
   unit,
 }: BarChartCardProps) {
+  const { width: screenWidth } = Dimensions.get("window");
+  const chartWidth = screenWidth - 48 - 90; // 총 여백을 한 번에 계산
   return (
     <View>
-      <CustomText style={styles.title}>{title}</CustomText>
+      <CustomText w="medium" style={styles.title}>
+        {title}
+      </CustomText>
 
       <View style={[styles.card, style]}>
         {data ? (
           <BarChart
+            width={chartWidth}
             // isAnimated
-            barWidth={18}
+            barWidth={22}
             maxValue={maxValue} //최대 값
             noOfSections={3} //가로줄 몇 개 할 건지
             hideRules
@@ -39,7 +44,7 @@ export default function BarChartCard({
               color: colors.gray3, //목표선(기준선) 색상
             }}
             barBorderRadius={4}
-            frontColor="lightgray"
+            frontColor={colors.primary2}
             data={data}
             yAxisThickness={0}
             xAxisThickness={0}

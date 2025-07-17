@@ -1,6 +1,7 @@
 import MealIcon from "../../assets/ic-meal.svg";
 import WalkIcon from "../../assets/ic-walk.svg";
 import SnackIcon from "../../assets/ic-snack.svg";
+import colors from "../../colors";
 
 export const summaryData = [
   {
@@ -36,21 +37,61 @@ export const weightData = [
 ];
 
 export const barData = [
-  { value: 2, label: "M", frontColor: "#177AD5" },
+  { value: 2, label: "M", frontColor: "#FF9C9C" },
   { value: 1, label: "T" },
   { value: 1, label: "W" },
-  { value: 2, label: "T", frontColor: "#177AD5" },
-  { value: 3, label: "F", frontColor: "#177AD5" },
-  { value: 2, label: "S", frontColor: "#177AD5" },
+  { value: 2, label: "T", frontColor: "#FF9C9C" },
+  { value: 3, label: "F", frontColor: "#FF9C9C" },
+  { value: 2, label: "S", frontColor: "#FF9C9C" },
   { value: 1, label: "S" },
 ];
 
 export const walkData = [
   { value: 250, label: "M" },
-  { value: 500, label: "T", frontColor: "#177AD5" },
-  { value: 745, label: "W", frontColor: "#177AD5" },
+  { value: 500, label: "T", frontColor: "#FF9C9C" },
+  { value: 745, label: "W", frontColor: "#FF9C9C" },
   { value: 320, label: "T" },
-  { value: 600, label: "F", frontColor: "#177AD5" },
+  { value: 600, label: "F", frontColor: "#FF9C9C" },
   { value: 256, label: "S" },
   { value: 300, label: "S" },
+];
+
+export const stackData = [
+  {
+    stacks: [
+      { value: 20, color: colors.primary2 },
+      { value: 10, color: "#FFD1D8" },
+    ],
+    label: "M",
+  },
+  {
+    stacks: [
+      { value: 15, color: "#D4FFE5" },
+      { value: 10, color: colors.primary2 },
+      { value: 11, color: "#FFD1D8" },
+    ],
+    label: "T",
+  },
+  {
+    stacks: [
+      { value: 7, color: colors.primary2 },
+      { value: 14, color: "#FFD1D8" },
+    ],
+    label: "W",
+  },
+  {
+    stacks: [
+      { value: 10, color: "#D4FFE5" },
+      { value: 7, color: colors.primary2 },
+      { value: 11, color: "#FFD1D8" },
+    ],
+    label: "T",
+  },
+  {
+    stacks: [
+      { value: 20, color: colors.primary2 },
+      { value: 10, color: "#FFD1D8" },
+    ],
+    label: "F",
+  },
 ];

@@ -1,24 +1,25 @@
 import { View, StyleSheet, ViewStyle, Dimensions } from "react-native";
 import shadows from "../../shadow";
 import colors from "../../colors";
-import { LineChart } from "react-native-gifted-charts";
+import { BarChart } from "react-native-gifted-charts";
 import CustomText from "../common/CustomText";
 
-type LineChartCardProps = {
-  style?: ViewStyle;
-  data?: { value: number; date?: string; label?: string }[];
-  title: string;
-  maxValue: number;
-  startValue: number;
+type StackBarDatum = {
+  label: string;
+  stacks: { value: number; color: string; marginBottom?: number }[];
 };
 
-export default function LineChartCard({
+type StackedBarChartCardProps = {
+  style?: ViewStyle;
+  data?: StackBarDatum[];
+  title: string;
+};
+
+export default function StackedBarChartCard({
   style,
   data,
   title,
-  maxValue,
-  startValue,
-}: LineChartCardProps) {
+}: StackedBarChartCardProps) {
   const { width: screenWidth } = Dimensions.get("window");
   const chartWidth = screenWidth - 48 - 90; // 총 여백을 한 번에 계산
   return (
@@ -29,33 +30,20 @@ export default function LineChartCard({
 
       <View style={[styles.card, style]}>
         {data ? (
-          <LineChart
-            // isAnimated
-            animationDuration={1000}
-            data={data}
-            maxValue={maxValue} // 최대값 설정(데이터 시작 지점에서 출발임: yAxisOffset)
-            yAxisOffset={startValue} //데이터 시작 지점
-            showValuesAsDataPointsText //점 위에 데이터 텍스트 표시
-            textColor1={colors.gray2}
-            thickness={2}
-            dataPointsColor1={colors.gray2} //점 색상
-            color={colors.gray2} //라인 색상
-            textShiftY={-7} //점 위에 데이터 텍스트 위치
-            textShiftX={-5}
-            startFillColor={"rgb(84,219,234)"}
-            endFillColor={"rgb(84,219,234)"}
-            startOpacity={0.4}
-            endOpacity={0.1}
-            xAxisColor={colors.gray4}
-            yAxisColor={colors.gray4}
-            yAxisLabelSuffix="kg" //단위
-            yAxisTextStyle={styles.textStyle}
-            xAxisLabelTextStyle={styles.textStyle}
-            stepValue={0.3} // Y축 간격
-            yAxisThickness={0}
-            // 차트 크기 제어
+          <BarChart
             width={chartWidth}
-            height={100}
+            barWidth={22}
+            barBorderRadius={3}
+            noOfSections={4}
+            stackData={data}
+            yAxisThickness={0}
+            xAxisThickness={0}
+            // xy축 라벨 색상
+            yAxisTextStyle={styles.textStyle}
+            xAxisLabelTextStyle={{
+              ...styles.textStyle,
+              marginLeft: 8, //가운데 정렬 맞추려고..
+            }}
           />
         ) : (
           <View
@@ -88,6 +76,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textStyle: {
+    color: colors.gray2,
+    fontSize: 10,
+    fontFamily: "Pretendard-Regular",
+  },
+  xAxisLabelTextStyle: {
     color: colors.gray2,
     fontSize: 10,
     fontFamily: "Pretendard-Regular",
