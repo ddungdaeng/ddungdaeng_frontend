@@ -5,7 +5,7 @@ type SummaryCardListProps = {
   style?: ViewStyle;
 };
 
-import { summaryData } from "./mockupData";
+import { summaryData } from "../common/mockupData";
 export default function SummaryCardList({ style }: SummaryCardListProps) {
   return (
     <View style={[styles.container, style]}>
