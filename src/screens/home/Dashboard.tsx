@@ -8,6 +8,7 @@ import SummaryCardList from "../../components/dashboard/SummaryCardList";
 import CharacterLoad from "../../components/dashboard/CharacterLoad";
 import WeightChart from "../../components/dashboard/WeightChart";
 import ThisWeekHealthReport from "../../components/ThisWeekHealthReport";
+import GoalWeightProgress from "../../components/dashboard/GoalWeightProgress";
 
 type SelectedItem = {
   type: "input" | "load";
@@ -46,6 +47,7 @@ export default function Dashboard() {
         showsVerticalScrollIndicator={false}
       >
         <CharacterLoad />
+        <GoalWeightProgress goal={6} first={7} current={6.5} />
         <WeightChart />
         <SummaryCardList />
         <ThisWeekHealthReport />
