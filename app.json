@@ -5,6 +5,15 @@
     "version": "1.0.0",
     "web": {
       "bundler": "metro"
-    }
+    },
+    "android": {
+      "package": "com.anonymous.ddungdaengfrontend"
+    },
+    "ios": {
+      "bundleIdentifier": "com.anonymous.ddungdaengfrontend"
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
