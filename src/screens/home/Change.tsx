@@ -75,5 +75,4 @@ const styles = StyleSheet.create({
     textAlign: "left",
     alignSelf: "flex-start",
   },
-  lineChartCard: {},
 });

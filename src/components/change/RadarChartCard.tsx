@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Svg, { Polygon, Circle, Line, Text as SvgText } from "react-native-svg";
+import { SCALE_FACTOR } from "../../constants";
 
 type RadarChartCardProps = {
   data: number[];
@@ -41,6 +42,7 @@ const RadarChartCard = ({
   const radius = (size - 80) / 2;
 
   // 각 축의 각도 계산 (5개 축, 위쪽부터 시계방향)
+  // angleStep은 전체 원을 레이블 개수로 나누어 축 사이의 각도 간격을 결정
   const angleStep = (2 * Math.PI) / labels.length;
 
   // 좌표 계산 함수
@@ -176,7 +178,7 @@ const RadarChartCard = ({
 
     for (let level = 1; level < levels; level++) {
       const value = (maxValue * level) / levels;
-      const levelRadius = (radius * level * 0.8) / levels;
+      const levelRadius = (radius * level * SCALE_FACTOR) / levels;
 
       scaleNumbers.push(
         <SvgText

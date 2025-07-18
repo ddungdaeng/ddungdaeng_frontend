@@ -88,11 +88,6 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontFamily: "Pretendard-Regular",
   },
-  xAxisLabelTextStyle: {
-    color: colors.gray2,
-    fontSize: 10,
-    fontFamily: "Pretendard-Regular",
-  },
   textInCard: {
     fontSize: 14,
     color: colors.gray2,
