@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, TextProps, StyleSheet } from "react-native";
-import colors from "../../colors";
+import colors from "../../styles/colors";
 
 interface CustomTextProps extends TextProps {
   w?: "regular" | "bold" | "semibold" | "medium";

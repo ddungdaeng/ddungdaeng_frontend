@@ -1,6 +1,6 @@
 import { View, StyleSheet } from "react-native";
-import colors from "../../colors";
-import shadows from "../../shadow";
+import colors from "../../styles/colors";
+import shadows from "../../styles/shadow";
 import { LinearGradient } from "expo-linear-gradient";
 import CustomText from "../common/CustomText";
 

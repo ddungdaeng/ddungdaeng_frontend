@@ -5,9 +5,9 @@ import {
   ViewStyle,
   TouchableOpacity,
 } from "react-native";
-import shadows from "../shadow";
-import colors from "../colors";
-import CustomText from "./common/CustomText";
+import shadows from "../../styles/shadow";
+import colors from "../../styles/colors";
+import CustomText from "../common/CustomText";
 
 type ThisWeekHealthReportProps = {
   style?: ViewStyle;

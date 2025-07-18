@@ -4,7 +4,7 @@ import TopTabs from "./TopTabs";
 import Settings from "../screens/Settings";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import colors from "../colors";
+import colors from "../styles/colors";
 import Mypage from "../screens/Mypage";
 import FamilyMemberManagement from "../screens/FamilyMemberManagement";
 import HealthReportCollection from "../screens/HealthReportCollection";

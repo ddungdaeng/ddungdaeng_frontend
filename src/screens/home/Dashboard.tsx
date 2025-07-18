@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ScrollView, View, StyleSheet } from "react-native";
 
-import colors from "../../colors";
+import colors from "../../styles/colors";
 import { weightData } from "../../components/dashboard/mockupData";
 
 import FloatingButton from "../../components/dashboard/FloatingButton";
@@ -10,7 +10,7 @@ import InputModal from "../../components/dashboard/InputModal";
 import SummaryCardList from "../../components/dashboard/SummaryCardList";
 import CharacterLoad from "../../components/dashboard/CharacterLoad";
 import WeightChart from "../../components/dashboard/WeightChart";
-import ThisWeekHealthReport from "../../components/ThisWeekHealthReport";
+import ThisWeekHealthReport from "../../components/dashboard/ThisWeekHealthReport";
 import GoalWeightProgress from "../../components/dashboard/GoalWeightProgress";
 
 type SelectedItem = {

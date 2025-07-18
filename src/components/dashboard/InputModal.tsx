@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, View, Text, StyleSheet, TextInput } from "react-native";
-import colors from "../../colors";
+import colors from "../../styles/colors";
 import MealDog from "../../assets/mealCharacter.svg";
 import WalkDog from "../../assets/walkCharacter.svg";
 import WeightDog from "../../assets/weightCharacter.svg";

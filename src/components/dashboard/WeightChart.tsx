@@ -1,6 +1,6 @@
 import { View, StyleSheet, ViewStyle } from "react-native";
-import shadows from "../../shadow";
-import colors from "../../colors";
+import shadows from "../../styles/shadow";
+import colors from "../../styles/colors";
 import CustomText from "../common/CustomText";
 import { LineChart } from "react-native-gifted-charts";
 

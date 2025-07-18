@@ -7,7 +7,7 @@ import {
   LayoutChangeEvent,
 } from "react-native";
 import CustomText from "../common/CustomText";
-import colors from "../../colors";
+import colors from "../../styles/colors";
 
 type GoalWeightProgressProps = {
   first: number;
