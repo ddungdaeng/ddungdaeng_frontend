@@ -19,7 +19,7 @@ const CustomText: React.FC<CustomTextProps> = ({
       case "bold":
         return "Pretendard-Bold";
       case "semibold":
-        return "Pretendard-Bold";
+        return "Pretendard-SemiBold";
       default:
         return "Pretendard-Regular";
     }

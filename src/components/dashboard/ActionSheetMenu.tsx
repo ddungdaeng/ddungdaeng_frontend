@@ -1,7 +1,6 @@
 import React from "react";
 import { Modal, Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import colors from "../../styles/colors";
 import shadows from "../../styles/shadow";
 import CustomText from "../common/CustomText";
 

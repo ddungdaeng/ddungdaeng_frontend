@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import Character from "../../assets/character.svg";
 import CustomText from "../common/CustomText";
 
