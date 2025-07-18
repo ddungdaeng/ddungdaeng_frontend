@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import CustomText from "../../components/common/CustomText";
+import colors from "../../styles/colors";
 import LineChartCard from "../../components/change/LineChartCard";
 import {
   barData,
@@ -12,7 +13,6 @@ import {
 import BarChartCard from "../../components/change/BarChartCard";
 import StackedBarChartCard from "../../components/change/StackedBarChartCard";
 import RadarChartCard from "../../components/change/RadarChartCard";
-import colors from "../../styles/colors";
 
 export default function Change() {
   return (

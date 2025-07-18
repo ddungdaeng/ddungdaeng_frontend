@@ -6,7 +6,6 @@ import BottomSheet, {
   BottomSheetModal,
   BottomSheetView,
   BottomSheetModalProvider,
-  BottomSheetBackdrop,
 } from "@gorhom/bottom-sheet";
 import CustomText from "../../components/common/CustomText";
 import Calendar from "../../assets/calendar.svg";
