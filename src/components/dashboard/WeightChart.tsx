@@ -42,6 +42,7 @@ export default function WeightChart({ style }: WeightChartProps) {
           showDataPointOnFocus //점 노출 디폴트:false
           stepValue={0.3} // Y축 간격
           maxValue={1} // 최대값 설정(데이터 시작 지점에서 출발임: yAxisOffset)
+          yAxisThickness={0} //y축 선 없애기
           //포커스
           focusEnabled
           focusedDataPointColor={colors.primary1}
