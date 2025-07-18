@@ -4,7 +4,8 @@ import CustomText from "../../components/common/CustomText";
 import LineChartCard from "../../components/change/LineChartCard";
 import {
   barData,
-  // stackData,
+  radarData,
+  stackData,
   walkData,
   weightData,
 } from "../../components/common/mockupData";
@@ -26,7 +27,7 @@ export default function Change() {
         </CustomText>
 
         {/* 방사형 차트 */}
-        {/* <RadarChartCard /> */}
+        <RadarChartCard data={radarData} />
 
         {/* 체중 변화 */}
         <LineChartCard
