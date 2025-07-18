@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useRef } from "react";
 import colors from "../../styles/colors";
 import { View, StyleSheet, Button } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import {
+import BottomSheet, {
   BottomSheetModal,
   BottomSheetView,
   BottomSheetModalProvider,
@@ -11,41 +11,25 @@ import {
 import CustomText from "../../components/common/CustomText";
 
 export default function Detail() {
-  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+  // ref
+  const bottomSheetRef = useRef<BottomSheet>(null);
 
-  const handlePresentModalPress = useCallback(() => {
-    bottomSheetModalRef.current?.present();
-  }, []);
+  // callbacks
   const handleSheetChanges = useCallback((index: number) => {
     console.log("handleSheetChanges", index);
   }, []);
-  const renderBackdrop = useCallback(
-    (props: any) => (
-      <BottomSheetBackdrop
-        {...props}
-        pressBehavior="close"
-        //요것들 추가해야만 뒷배경 눌렀을 때 모달창 닫침
-        // appearsOnIndex={0}
-        // disappearsOnIndex={-1}
-      />
-    ),
-    []
-  );
+
   //todo: 스타일 수정 필요
 
-  // variables
-  const snapPoints = useMemo(() => ["40%"], []); //다 올렸을 때 40%만 올린다..?
+  const snapPoints = useMemo(() => ["23%", "40%"], []); //처음 올릴 때 23%, 더 올리면 40%
 
   return (
     <GestureHandlerRootView style={styles.container}>
       <BottomSheetModalProvider>
-        <Button
-          onPress={handlePresentModalPress}
-          title="Present Modal"
-          color="black"
-        />
-        <BottomSheetModal
-          ref={bottomSheetModalRef}
+        {/*여기에 내용 추가 */}
+        <CustomText>여기에 내용 추가</CustomText>
+        <BottomSheet
+          ref={bottomSheetRef}
           onChange={handleSheetChanges}
           snapPoints={snapPoints}
           // backdropComponent={renderBackdrop} //뒷배경 누르면 모달창 닫기(but, 이거하면 윗 내용이 배경이 됨..)
@@ -99,7 +83,7 @@ export default function Detail() {
               </View>
             </View>
           </BottomSheetView>
-        </BottomSheetModal>
+        </BottomSheet>
       </BottomSheetModalProvider>
     </GestureHandlerRootView>
   );
@@ -108,7 +92,8 @@ export default function Detail() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
+    paddingHorizontal: 24,
+    paddingVertical: 47,
     backgroundColor: colors.white,
   },
   contentContainer: {
