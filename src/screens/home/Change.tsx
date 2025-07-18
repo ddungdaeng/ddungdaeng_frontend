@@ -5,6 +5,7 @@ import colors from "../../colors";
 import LineChartCard from "../../components/change/LineChartCard";
 import {
   barData,
+  radarData,
   stackData,
   walkData,
   weightData,
@@ -26,7 +27,7 @@ export default function Change() {
         </CustomText>
 
         {/* 방사형 차트 */}
-        <RadarChartCard />
+        <RadarChartCard data={radarData} />
 
         {/* 체중 변화 */}
         <LineChartCard

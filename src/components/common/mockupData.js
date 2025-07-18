@@ -95,3 +95,5 @@ export const stackData = [
     label: "F",
   },
 ];
+
+export const radarData = [70, 80, 60, 75, 65];
