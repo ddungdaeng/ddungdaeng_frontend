@@ -9,7 +9,7 @@ import BottomSheet, {
   BottomSheetBackdrop,
 } from "@gorhom/bottom-sheet";
 import CustomText from "../../components/common/CustomText";
-
+import Calendar from "../../assets/calendar.svg";
 export default function Detail() {
   // ref
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -27,7 +27,9 @@ export default function Detail() {
     <GestureHandlerRootView style={styles.container}>
       <BottomSheetModalProvider>
         {/*여기에 내용 추가 */}
-        <CustomText>여기에 내용 추가</CustomText>
+        <View style={{ alignItems: "center" }}>
+          <Calendar />
+        </View>
         <BottomSheet
           ref={bottomSheetRef}
           onChange={handleSheetChanges}
