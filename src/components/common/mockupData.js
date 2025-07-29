@@ -47,13 +47,13 @@ export const barData = [
 ];
 
 export const walkData = [
-  { value: 250, label: "M" },
-  { value: 500, label: "T", frontColor: "#FF9C9C" },
+  { value: 200, label: "M" },
+  { value: 240, label: "T" },
   { value: 745, label: "W", frontColor: "#FF9C9C" },
-  { value: 320, label: "T" },
+  { value: 280, label: "T" },
   { value: 600, label: "F", frontColor: "#FF9C9C" },
   { value: 256, label: "S" },
-  { value: 300, label: "S" },
+  { value: 300, label: "S", frontColor: "#FF9C9C" },
 ];
 
 export const stackData = [

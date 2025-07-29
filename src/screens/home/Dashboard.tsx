@@ -10,8 +10,8 @@ import InputModal from "../../components/dashboard/InputModal";
 import SummaryCardList from "../../components/dashboard/SummaryCardList";
 import CharacterLoad from "../../components/dashboard/CharacterLoad";
 import WeightChart from "../../components/dashboard/WeightChart";
-import ThisWeekHealthReport from "../../components/dashboard/ThisWeekHealthReport";
 import GoalWeightProgress from "../../components/dashboard/GoalWeightProgress";
+import HealthReport from "../../components/common/HealthReport";
 
 type SelectedItem = {
   type: "input" | "load";
@@ -62,7 +62,13 @@ export default function Dashboard() {
         <SummaryCardList />
 
         {/* 이번주 건강 리포트 */}
-        <ThisWeekHealthReport />
+        <HealthReport
+          title="이번주 건강 리포트"
+          averageWeight={4.2}
+          feedingAmount={82}
+          treatAmount={3}
+          walkingRate={3}
+        />
       </ScrollView>
 
       {/* 버튼 */}

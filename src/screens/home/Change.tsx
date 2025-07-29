@@ -54,7 +54,7 @@ export default function Change() {
           data={walkData}
           title="산책 횟수 변화"
           maxValue={900}
-          goalValue={350}
+          goalValue={300}
           unit="회"
         />
         {/* 가족 참여율 */}

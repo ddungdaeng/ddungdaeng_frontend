@@ -1,14 +1,13 @@
 import React, { useCallback, useMemo, useRef } from "react";
 import colors from "../../styles/colors";
-import { View, StyleSheet, Button } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import BottomSheet, {
-  BottomSheetModal,
   BottomSheetView,
   BottomSheetModalProvider,
 } from "@gorhom/bottom-sheet";
 import CustomText from "../../components/common/CustomText";
-import Calendar from "../../assets/calendar.svg";
+import Calendar from "../../components/detail/Calendar";
 export default function Detail() {
   // ref
   const bottomSheetRef = useRef<BottomSheet>(null);

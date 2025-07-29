@@ -5,7 +5,7 @@ export default function HealthReportCollection() {
     <CustomText
       style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
     >
-      가족 구성원 관리
+      건강 리포트 모아보기
     </CustomText>
   );
 }
