@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import CustomText from "../common/CustomText";
 import colors from "../../styles/colors";
+import { CONTENT_WIDTH } from "../../constants";
 
 interface GoalWeightProgressProps {
   first: number;
@@ -81,7 +82,7 @@ export default function GoalWeightProgress({
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: "100%",
+    width: CONTENT_WIDTH,
     alignItems: "center",
   },
   labels: {
@@ -92,12 +93,12 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   label: {
-    fontSize: 14,
+    fontSize: 16,
     color: colors.gray1,
   },
   progressBackground: {
     flexDirection: "row",
-    height: 24,
+    height: 20,
     borderRadius: 12,
     backgroundColor: "#E5E5E5",
     overflow: "hidden",
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   currentText: {
-    fontSize: 12,
+    fontSize: 14,
     color: colors.gray2,
     marginTop: 4,
   },

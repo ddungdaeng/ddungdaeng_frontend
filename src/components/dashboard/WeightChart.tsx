@@ -1,14 +1,14 @@
-import { View, StyleSheet, ViewStyle } from "react-native";
+import { View, StyleSheet, ViewStyle, Dimensions } from "react-native";
 import shadows from "../../styles/shadow";
 import colors from "../../styles/colors";
 import CustomText from "../common/CustomText";
 import { LineChart } from "react-native-gifted-charts";
+import { CARD_PADDING, CHART_WIDTH, CONTENT_WIDTH } from "../../constants";
 
 interface WeightChartProps {
   style?: ViewStyle;
   data?: { value: number; date?: string; label?: string }[];
 }
-
 export default function WeightChart({ style, data }: WeightChartProps) {
   return (
     <View style={styles.container}>
@@ -40,8 +40,8 @@ export default function WeightChart({ style, data }: WeightChartProps) {
           focusedDataPointRadius={3}
           focusTogether
           showTextOnFocus
-          // 차트 크기 제어
-          width={250} // 차트 너비 명시적 설정
+          // 동적 너비 계산으로 카드 안에 맞춤
+          width={CHART_WIDTH}
           height={100}
         />
       </View>
@@ -51,21 +51,19 @@ export default function WeightChart({ style, data }: WeightChartProps) {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    width: CONTENT_WIDTH,
+  },
   card: {
-    width: 342,
+    width: CONTENT_WIDTH,
     minHeight: 106,
     backgroundColor: colors.white,
     borderRadius: 10,
     paddingVertical: 15,
-    paddingHorizontal: 15,
+    paddingHorizontal: CARD_PADDING,
     ...shadows.basic,
     justifyContent: "center",
-  },
-  textInCard: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center", // 차트를 카드 안에서 중앙 정렬
   },
   userText: {
     marginTop: 7,

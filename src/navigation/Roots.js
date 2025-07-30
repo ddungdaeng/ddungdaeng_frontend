@@ -13,7 +13,7 @@ export default function Root() {
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
       <Nav.Navigator screenOptions={{ headerShown: false }}>
         {/* 온보딩 화면 */}
-        <Nav.Screen name="Onboarding" component={Onboarding} />
+        {/* <Nav.Screen name="Onboarding" component={Onbroarding} /> */}
 
         {/* 메인 앱 네비게이션 */}
         <Nav.Screen name="Main" component={Drawers} />

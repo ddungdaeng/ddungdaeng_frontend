@@ -1,11 +1,13 @@
 import { View, StyleSheet, ViewStyle } from "react-native";
 import SummaryCard from "./SummaryCard";
+import { CONTENT_WIDTH } from "../../constants";
 
 interface SummaryCardListProps {
   style?: ViewStyle;
 }
 
 import { summaryData } from "../common/mockupData";
+
 export default function SummaryCardList({ style }: SummaryCardListProps) {
   return (
     <View style={[styles.container, style]}>
@@ -24,7 +26,8 @@ export default function SummaryCardList({ style }: SummaryCardListProps) {
 
 const styles = StyleSheet.create({
   container: {
+    width: CONTENT_WIDTH,
     flexDirection: "row",
-    gap: 16,
+    justifyContent: "space-between", // 카드들을 균등하게 배치
   },
 });

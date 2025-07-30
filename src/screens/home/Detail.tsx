@@ -12,12 +12,8 @@ export default function Detail() {
   // ref
   const bottomSheetRef = useRef<BottomSheet>(null);
 
-  // callbacks
-  const handleSheetChanges = useCallback((index: number) => {
-    console.log("handleSheetChanges", index);
-  }, []);
-
   //todo: 스타일 수정 필요
+  //todo: 뒷배경 누르면 모달창 닫아지기
 
   const snapPoints = useMemo(() => ["23%", "40%"], []); //처음 올릴 때 23%, 더 올리면 40%
 
@@ -30,7 +26,6 @@ export default function Detail() {
         </View>
         <BottomSheet
           ref={bottomSheetRef}
-          onChange={handleSheetChanges}
           snapPoints={snapPoints}
           // backdropComponent={renderBackdrop} //뒷배경 누르면 모달창 닫기(but, 이거하면 윗 내용이 배경이 됨..)
           style={{
