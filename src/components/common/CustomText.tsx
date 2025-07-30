@@ -37,7 +37,7 @@ const CustomText: React.FC<CustomTextProps> = ({
 
 const styles = StyleSheet.create({
   defaultText: {
-    color: colors.black, // 기본 글씨색
+    color: colors.gray1, // 기본 글씨색
   },
 });
 

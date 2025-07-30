@@ -1,10 +1,10 @@
 import { TouchableOpacity, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import colors from "../../styles/colors";
-import Write from "../../assets/ic-write.svg";
-import Cancel from "../../assets/ic-cancel.svg";
-import shadows from "../../styles/shadow";
+import Write from "../../../assets/ic-write.svg";
+import Cancel from "../../../assets/ic-cancel.svg";
+import shadows from "../../../styles/shadow";
+import colors from "../../../styles/colors";
 
 export default function FloatingButton({
   onPress,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
     borderRadius: 10,
-    backgroundColor: colors.black,
+    backgroundColor: colors.gray1,
 
     //그림자 있어도 이쁠듯
     ...shadows.light,

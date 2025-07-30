@@ -4,9 +4,9 @@ import { ScrollView, View, StyleSheet } from "react-native";
 import colors from "../../styles/colors";
 import { weightData } from "../../components/common/mockupData";
 
-import FloatingButton from "../../components/dashboard/FloatingButton";
-import ActionSheetMenu from "../../components/dashboard/ActionSheetMenu";
-import InputModal from "../../components/dashboard/InputModal";
+import FloatingButton from "../../components/dashboard/floatingButton/FloatingButton";
+import ActionSheetMenu from "../../components/dashboard/floatingButton/ActionSheetMenu";
+import InputModal from "../../components/dashboard/floatingButton/InputModal";
 import SummaryCardList from "../../components/dashboard/SummaryCardList";
 import CharacterLoad from "../../components/dashboard/CharacterLoad";
 import WeightChart from "../../components/dashboard/WeightChart";

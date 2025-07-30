@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    color: colors.black,
+    color: colors.gray1,
   },
   progressBackground: {
     flexDirection: "row",
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   progressFill: {
-    backgroundColor: colors.black,
+    backgroundColor: colors.gray1,
     height: "100%",
     justifyContent: "center",
     alignItems: "center",

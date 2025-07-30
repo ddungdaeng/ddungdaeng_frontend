@@ -1,19 +1,23 @@
+//최상위 네비게이션
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Drawers from "./Drawers";
 import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../styles/colors";
+import Onboarding from "../screens/Onboarding";
+import Drawers from "./Drawers";
 
-const Nav = createNativeStackNavigator();
+const Nav = createNativeStackNavigator(); //스택
 
-const Root = () => {
+export default function Root() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
       <Nav.Navigator screenOptions={{ headerShown: false }}>
-        <Nav.Screen name="Drawers" component={Drawers} />
+        {/* 온보딩 화면 */}
+        <Nav.Screen name="Onboarding" component={Onboarding} />
+
+        {/* 메인 앱 네비게이션 */}
+        <Nav.Screen name="Main" component={Drawers} />
       </Nav.Navigator>
     </SafeAreaView>
   );
-};
-
-export default Root;
+}

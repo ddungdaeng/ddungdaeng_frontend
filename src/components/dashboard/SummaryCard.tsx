@@ -57,12 +57,12 @@ const styles = StyleSheet.create({
   },
   category: {
     fontSize: 14,
-    color: colors.black,
+    color: colors.gray1,
     marginBottom: 4,
   },
   data: {
     fontSize: 24,
-    color: colors.black,
+    color: colors.gray1,
     marginBottom: 2,
   },
   recent: {
