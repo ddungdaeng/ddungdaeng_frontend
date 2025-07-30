@@ -8,12 +8,12 @@ import { CONTENT_WIDTH } from "../../constants";
 interface SummaryCardProps {
   category: string;
   data: string;
-  recent: string;
+  recent: number;
   icon: React.ReactElement;
 }
 
 // 카드 3개가 들어갈 수 있도록 동적 계산
-const TOTAL_GAP = 38; // 총 간격
+const TOTAL_GAP = 32; // 총 간격
 const CARD_WIDTH = (CONTENT_WIDTH - TOTAL_GAP) / 3; // 각 카드 너비
 
 export default function SummaryCard({
@@ -25,15 +25,25 @@ export default function SummaryCard({
   return (
     <View style={styles.shadowWrapper}>
       <LinearGradient
-        colors={["#BCFFFE", colors.primary1]}
+        colors={["#BCFFFE", `${colors.primary1}B3`]} // B3 = 70% 투명도
+        locations={[0.63, 1.0]}
         style={styles.layout}
       >
         <View style={styles.card}>
           <CustomText style={styles.category}>{category}</CustomText>
-          <CustomText w="medium" style={styles.data}>
-            {data}
+          {
+            <CustomText w="medium" style={styles.data}>
+              {data}
+              {category == "식사" ? "g" : category == "산책" ? "분" : null}
+            </CustomText>
+          }
+          <CustomText style={styles.recent}>
+            {category == "식사"
+              ? `+${recent}g`
+              : category == "산책"
+                ? `+${recent}분`
+                : `${recent}분 전`}
           </CustomText>
-          <CustomText style={styles.recent}>{recent}</CustomText>
           <View style={styles.iconContainer}>{icon}</View>
         </View>
       </LinearGradient>
@@ -47,18 +57,17 @@ const styles = StyleSheet.create({
   },
   layout: {
     width: CARD_WIDTH, // 동적으로 계산된 너비 사용
-    height: 132,
+    height: 150,
     borderRadius: 10,
   },
   card: {
     flex: 1,
-    padding: 14,
-    justifyContent: "space-between",
+    padding: 16,
   },
   iconContainer: {
     position: "absolute", // absolute로 변경해서 레이아웃에 영향 안주도록
-    right: 14,
-    bottom: 14,
+    right: 15,
+    bottom: 15,
     justifyContent: "center",
     alignItems: "center",
     height: 40,
