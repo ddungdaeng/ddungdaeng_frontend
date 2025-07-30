@@ -5,19 +5,19 @@ import CustomText from "../../common/CustomText";
 import shadows from "../../../styles/shadow";
 import colors from "../../../styles/colors";
 
-type ActionSheetMenuProps = {
+interface ActionSheetMenuProps {
   isMenuOpen: boolean;
   onClose: () => void;
   onSelect: (
     type: "input" | "load",
     category: "weight" | "meal" | "walk"
   ) => void;
-};
+}
 
-type OptionProps = {
+interface OptionProps {
   label: string;
   onPress: () => void;
-};
+}
 
 export default function ActionSheetMenu({
   isMenuOpen,

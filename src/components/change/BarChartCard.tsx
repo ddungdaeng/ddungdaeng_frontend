@@ -4,14 +4,14 @@ import CustomText from "../common/CustomText";
 import colors from "../../styles/colors";
 import shadows from "../../styles/shadow";
 
-type BarChartCardProps = {
+interface BarChartCardProps {
   style?: ViewStyle;
   data?: { value: number; date?: string; label?: string }[];
   title: string;
   maxValue: number;
   goalValue: number;
   unit: string;
-};
+}
 
 export default function BarChartCard({
   style,

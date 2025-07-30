@@ -1,9 +1,9 @@
 import { View, StyleSheet, ViewStyle } from "react-native";
 import SummaryCard from "./SummaryCard";
 
-type SummaryCardListProps = {
+interface SummaryCardListProps {
   style?: ViewStyle;
-};
+}
 
 import { summaryData } from "../common/mockupData";
 export default function SummaryCardList({ style }: SummaryCardListProps) {

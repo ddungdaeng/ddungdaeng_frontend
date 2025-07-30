@@ -4,13 +4,13 @@ import CustomText from "../common/CustomText";
 import colors from "../../styles/colors";
 import shadows from "../../styles/shadow";
 
-type LineChartCardProps = {
+interface LineChartCardProps {
   style?: ViewStyle;
   data?: { value: number; date?: string; label?: string }[];
   title: string;
   maxValue: number;
   startValue: number;
-};
+}
 
 export default function LineChartCard({
   style,

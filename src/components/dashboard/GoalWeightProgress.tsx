@@ -9,11 +9,11 @@ import {
 import CustomText from "../common/CustomText";
 import colors from "../../styles/colors";
 
-type GoalWeightProgressProps = {
+interface GoalWeightProgressProps {
   first: number;
   goal: number;
   current: number;
-};
+}
 
 export default function GoalWeightProgress({
   first,

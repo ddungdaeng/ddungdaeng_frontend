@@ -4,12 +4,12 @@ import shadows from "../../styles/shadow";
 import { LinearGradient } from "expo-linear-gradient";
 import CustomText from "../common/CustomText";
 
-type SummaryCardProps = {
+interface SummaryCardProps {
   category: string;
   data: string;
   recent: string;
   icon: React.ReactElement;
-};
+}
 
 export default function SummaryCard({
   category,

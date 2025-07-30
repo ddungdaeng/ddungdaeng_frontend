@@ -4,10 +4,10 @@ import colors from "../../styles/colors";
 import CustomText from "../common/CustomText";
 import { LineChart } from "react-native-gifted-charts";
 
-type WeightChartProps = {
+interface WeightChartProps {
   style?: ViewStyle;
   data?: { value: number; date?: string; label?: string }[];
-};
+}
 
 export default function WeightChart({ style, data }: WeightChartProps) {
   return (

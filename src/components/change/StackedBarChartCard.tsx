@@ -4,16 +4,16 @@ import CustomText from "../common/CustomText";
 import colors from "../../styles/colors";
 import shadows from "../../styles/shadow";
 
-type StackBarDatum = {
+interface StackBarDatum {
   label: string;
   stacks: { value: number; color: string; marginBottom?: number }[];
-};
+}
 
-type StackedBarChartCardProps = {
+interface StackedBarChartCardProps {
   style?: ViewStyle;
   data?: StackBarDatum[];
   title: string;
-};
+}
 
 export default function StackedBarChartCard({
   style,

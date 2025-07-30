@@ -13,11 +13,11 @@ import WeightChart from "../../components/dashboard/WeightChart";
 import GoalWeightProgress from "../../components/dashboard/GoalWeightProgress";
 import HealthReport from "../../components/common/HealthReport";
 
-type SelectedItem = {
+interface SelectedItem {
   type: "input" | "load";
   category: "weight" | "meal" | "walk";
   label: string;
-};
+}
 
 export default function Dashboard() {
   const [menuVisible, setMenuVisible] = useState(false);

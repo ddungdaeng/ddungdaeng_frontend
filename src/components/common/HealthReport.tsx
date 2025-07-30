@@ -3,14 +3,14 @@ import shadows from "../../styles/shadow";
 import colors from "../../styles/colors";
 import CustomText from "./CustomText";
 
-type HealthReportProps = {
+interface HealthReportProps {
   style?: ViewStyle;
   title: string;
   averageWeight: number; //평균체중
   feedingAmount: number; //급여량
   treatAmount: number; //간식량
   walkingRate: number; //산책률
-};
+}
 
 export default function HealthReport({
   style,
