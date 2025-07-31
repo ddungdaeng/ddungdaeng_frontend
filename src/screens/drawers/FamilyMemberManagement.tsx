@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, View } from "react-native";
-import { HORIZONTAL_PADDING } from "../constants";
-import colors from "../styles/colors";
-import CustomText from "../components/common/CustomText";
+import { HORIZONTAL_PADDING } from "../../constants";
+import colors from "../../styles/colors";
+import CustomText from "../../components/common/CustomText";
 
 export default function FamilyMemberManagement() {
   return (

@@ -1,10 +1,10 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native";
-import { HORIZONTAL_PADDING } from "../constants";
+import { HORIZONTAL_PADDING } from "../../constants";
 
-import colors from "../styles/colors";
+import colors from "../../styles/colors";
 import { useEffect } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { StackParamList } from "../types/navigation";
+import { StackParamList } from "../../types/navigation";
 
 type HealthReportDetailProps = NativeStackScreenProps<
   StackParamList,

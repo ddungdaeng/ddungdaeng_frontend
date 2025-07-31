@@ -1,15 +1,17 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import TopTabs from "./TopTabs";
-import Settings from "../screens/Settings";
 import { View, TouchableOpacity, StyleSheet, Alert } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import colors from "../styles/colors";
-import Mypage from "../screens/Mypage";
-import FamilyMemberManagement from "../screens/FamilyMemberManagement";
-import HealthReportCollection from "../screens/HealthReportCollection";
-import DogProfileManagement from "../screens/DogProfileManagement";
+
+import TopTabs from "./TopTabs";
 import CustomText from "../components/common/CustomText";
+import colors from "../styles/colors";
+
+import Mypage from "../screens/drawers/Mypage";
+import Settings from "../screens/drawers/Settings";
+import FamilyMemberManagement from "../screens/drawers/FamilyMemberManagement";
+import HealthReportCollection from "../screens/drawers/HealthReportCollection";
+import DogProfileManagement from "../screens/drawers/DogProfileManagement";
 
 const Drawer = createDrawerNavigator();
 

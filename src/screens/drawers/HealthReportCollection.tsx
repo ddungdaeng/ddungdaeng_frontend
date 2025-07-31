@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, View } from "react-native";
-import { HORIZONTAL_PADDING } from "../constants";
-import colors from "../styles/colors";
-import HealthReport from "../components/common/HealthReport";
+import { HORIZONTAL_PADDING } from "../../constants";
+import colors from "../../styles/colors";
+import HealthReport from "../../components/common/HealthReport";
 
 export default function HealthReportCollection() {
   return (
