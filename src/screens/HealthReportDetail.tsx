@@ -3,22 +3,29 @@ import { HORIZONTAL_PADDING } from "../constants";
 
 import colors from "../styles/colors";
 import { useEffect } from "react";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { StackParamList } from "../types/navigation";
+
+type HealthReportDetailProps = NativeStackScreenProps<
+  StackParamList,
+  "HealthReportDetail"
+>;
 
 export default function HealthReportDetail({
-  navigation: { setOptions },
+  navigation,
   route: {
     params: { title },
   },
-}) {
+}: HealthReportDetailProps) {
   useEffect(() => {
-    setOptions({
+    navigation.setOptions({
       title: title,
       headerTitleStyle: {
         fontSize: 20,
         fontFamily: "Pretendard-SemiBold",
       },
     });
-  }, []);
+  }, [title, navigation]);
   return (
     <View style={{ flex: 1, backgroundColor: colors.white }}>
       <ScrollView

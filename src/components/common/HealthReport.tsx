@@ -3,7 +3,8 @@ import shadows from "../../styles/shadow";
 import colors from "../../styles/colors";
 import CustomText from "./CustomText";
 import { CONTENT_WIDTH } from "../../constants";
-import { useNavigation } from "@react-navigation/native";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { RootStackParamList } from "../../types/navigation";
 
 interface HealthReportProps {
   style?: ViewStyle;
@@ -13,6 +14,7 @@ interface HealthReportProps {
   treatAmount: number; //간식량
   walkingRate: number; //산책률
 }
+type NavigationType = NavigationProp<RootStackParamList>;
 
 export default function HealthReport({
   style,
@@ -22,7 +24,8 @@ export default function HealthReport({
   treatAmount,
   walkingRate,
 }: HealthReportProps) {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationType>();
+
   const handleReportPress = () => {
     if (title === "이번주 건강 리포트") {
       // 전체 리포트 보기 -> Drawer의 HealthReportCollection으로 이동
