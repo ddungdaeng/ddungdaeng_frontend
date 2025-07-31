@@ -6,14 +6,15 @@ import {
   Easing,
   LayoutChangeEvent,
 } from "react-native";
-import CustomText from "../common/CustomText";
-import colors from "../../colors";
+import CustomText from "../../common/CustomText";
+import { CONTENT_WIDTH } from "../../../constants";
+import colors from "../../../styles/colors";
 
-type GoalWeightProgressProps = {
+interface GoalWeightProgressProps {
   first: number;
   goal: number;
   current: number;
-};
+}
 
 export default function GoalWeightProgress({
   first,
@@ -81,7 +82,7 @@ export default function GoalWeightProgress({
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: "100%",
+    width: CONTENT_WIDTH,
     alignItems: "center",
   },
   labels: {
@@ -92,20 +93,20 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   label: {
-    fontSize: 14,
-    color: colors.black,
+    fontSize: 16,
+    color: colors.gray1,
   },
   progressBackground: {
     flexDirection: "row",
-    height: 24,
+    height: 20,
     borderRadius: 12,
-    backgroundColor: "#E5E5E5",
+    backgroundColor: colors.gray4,
     overflow: "hidden",
     width: "100%",
     alignItems: "center",
   },
   progressFill: {
-    backgroundColor: colors.black,
+    backgroundColor: colors.gray1,
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   currentText: {
-    fontSize: 12,
+    fontSize: 14,
     color: colors.gray2,
     marginTop: 4,
   },

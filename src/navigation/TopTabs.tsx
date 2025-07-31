@@ -2,7 +2,7 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import Dashboard from "../screens/home/Dashboard";
 import Detail from "../screens/home/Detail";
 import Change from "../screens/home/Change";
-import colors from "../colors";
+import colors from "../styles/colors";
 
 const TopTab = createMaterialTopTabNavigator();
 

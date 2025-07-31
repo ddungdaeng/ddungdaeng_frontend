@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import Svg, { Polygon, Circle, Line, Text as SvgText } from "react-native-svg";
-import { SCALE_FACTOR } from "../../constants";
+import { SCALE_FACTOR } from "../../../constants";
 
-type RadarChartCardProps = {
+interface RadarChartCardProps {
   data: number[];
   labels?: string[];
   size?: number;
@@ -19,7 +19,7 @@ type RadarChartCardProps = {
     labels?: string;
     black?: string;
   };
-};
+}
 
 const RadarChartCard = ({
   data, // 기본값: [체중, 산책, 기록 참여도, 간식, 식사]

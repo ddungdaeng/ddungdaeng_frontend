@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, TextProps, StyleSheet } from "react-native";
-import colors from "../../colors";
+import colors from "../../styles/colors";
 
 interface CustomTextProps extends TextProps {
   w?: "regular" | "bold" | "semibold" | "medium";
@@ -37,7 +37,7 @@ const CustomText: React.FC<CustomTextProps> = ({
 
 const styles = StyleSheet.create({
   defaultText: {
-    color: colors.black, // 기본 글씨색
+    color: colors.gray1, // 기본 글씨색
   },
 });
 

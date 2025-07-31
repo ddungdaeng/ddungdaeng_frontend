@@ -1,4 +1,4 @@
-import CustomText from "../components/common/CustomText";
+import CustomText from "../../components/common/CustomText";
 
 export default function DogProfileManagement() {
   return (

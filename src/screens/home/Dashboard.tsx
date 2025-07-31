@@ -1,20 +1,24 @@
 import React, { useState } from "react";
-import { ScrollView, View, StyleSheet } from "react-native";
-import FloatingButton from "../../components/dashboard/FloatingButton";
-import ActionSheetMenu from "../../components/dashboard/ActionSheetMenu";
-import colors from "../../colors";
-import InputModal from "../../components/dashboard/InputModal";
-import SummaryCardList from "../../components/dashboard/SummaryCardList";
-import CharacterLoad from "../../components/dashboard/CharacterLoad";
-import WeightChart from "../../components/dashboard/WeightChart";
-import ThisWeekHealthReport from "../../components/ThisWeekHealthReport";
-import GoalWeightProgress from "../../components/dashboard/GoalWeightProgress";
+import { ScrollView, View, StyleSheet, Dimensions } from "react-native";
 
-type SelectedItem = {
+import colors from "../../styles/colors";
+import { weightData } from "../../components/common/mockupData";
+
+import FloatingButton from "../../components/home/dashboard/floatingButton/FloatingButton";
+import ActionSheetMenu from "../../components/home/dashboard/floatingButton/ActionSheetMenu";
+import InputModal from "../../components/home/dashboard/floatingButton/InputModal";
+import SummaryCardList from "../../components/home/dashboard/SummaryCardList";
+import CharacterLoad from "../../components/home/dashboard/CharacterLoad";
+import WeightChart from "../../components/home/dashboard/WeightChart";
+import GoalWeightProgress from "../../components/home/dashboard/GoalWeightProgress";
+import HealthReport from "../../components/common/HealthReport";
+import { HORIZONTAL_PADDING } from "../../constants";
+
+interface SelectedItem {
   type: "input" | "load";
   category: "weight" | "meal" | "walk";
   label: string;
-};
+}
 
 export default function Dashboard() {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -43,16 +47,32 @@ export default function Dashboard() {
     <View style={{ flex: 1, backgroundColor: colors.white }}>
       <ScrollView
         style={{ flex: 1 }}
-        contentContainerStyle={styles.contentContainer}
+        contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
       >
+        {/* 유저 로드 */}
         <CharacterLoad />
+
+        {/* 프로그레스 바 */}
         <GoalWeightProgress goal={6} first={7} current={6.5} />
-        <WeightChart />
+
+        {/* 몸무게 차트 */}
+        <WeightChart data={weightData} />
+
+        {/* 요약 카드 */}
         <SummaryCardList />
-        <ThisWeekHealthReport />
+
+        {/* 이번주 건강 리포트 */}
+        <HealthReport
+          title="이번주 건강 리포트"
+          averageWeight={4.2}
+          feedingAmount={82}
+          treatAmount={3}
+          walkingRate={3}
+        />
       </ScrollView>
 
+      {/* 버튼 */}
       <FloatingButton
         onPress={() => setMenuVisible(true)}
         isMenuOpen={menuVisible}
@@ -77,13 +97,10 @@ export default function Dashboard() {
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
-    flex: 1,
-  },
-  contentContainer: {
+  container: {
     alignItems: "center",
-    paddingHorizontal: 43,
     paddingVertical: 24,
+    paddingHorizontal: HORIZONTAL_PADDING,
     gap: 21,
   },
 });

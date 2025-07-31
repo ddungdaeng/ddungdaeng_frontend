@@ -1,23 +1,24 @@
 import React from "react";
-import { Modal, Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import { Modal, TouchableOpacity, View, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import colors from "../../colors";
-import shadows from "../../shadow";
-import CustomText from "../common/CustomText";
 
-type ActionSheetMenuProps = {
+import CustomText from "../../../common/CustomText";
+import colors from "../../../../styles/colors";
+import shadows from "../../../../styles/shadow";
+
+interface ActionSheetMenuProps {
   isMenuOpen: boolean;
   onClose: () => void;
   onSelect: (
     type: "input" | "load",
     category: "weight" | "meal" | "walk"
   ) => void;
-};
+}
 
-type OptionProps = {
+interface OptionProps {
   label: string;
   onPress: () => void;
-};
+}
 
 export default function ActionSheetMenu({
   isMenuOpen,
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
   card: {
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white",
+    backgroundColor: colors.white,
     borderRadius: 10,
     paddingVertical: 6,
     paddingHorizontal: 16,

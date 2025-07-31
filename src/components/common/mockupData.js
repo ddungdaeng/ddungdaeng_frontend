@@ -1,31 +1,4 @@
-import MealIcon from "../../assets/ic-meal.svg";
-import WalkIcon from "../../assets/ic-walk.svg";
-import SnackIcon from "../../assets/ic-snack.svg";
-import colors from "../../colors";
-
-export const summaryData = [
-  {
-    id: 1,
-    category: "식사",
-    data: "80g",
-    recent: "+30g",
-    icon: <MealIcon />,
-  },
-  {
-    id: 2,
-    category: "산책",
-    data: "80g",
-    recent: "+5분",
-    icon: <WalkIcon />,
-  },
-  {
-    id: 3,
-    category: "간식",
-    data: "80g",
-    recent: "28분 전",
-    icon: <SnackIcon />,
-  },
-];
+import colors from "../../styles/colors";
 
 export const weightData = [
   { dataPointText: 6, value: 6, label: "6/30" },
@@ -47,13 +20,13 @@ export const barData = [
 ];
 
 export const walkData = [
-  { value: 250, label: "M" },
-  { value: 500, label: "T", frontColor: "#FF9C9C" },
+  { value: 200, label: "M" },
+  { value: 240, label: "T" },
   { value: 745, label: "W", frontColor: "#FF9C9C" },
-  { value: 320, label: "T" },
+  { value: 280, label: "T" },
   { value: 600, label: "F", frontColor: "#FF9C9C" },
   { value: 256, label: "S" },
-  { value: 300, label: "S" },
+  { value: 300, label: "S", frontColor: "#FF9C9C" },
 ];
 
 export const stackData = [
@@ -97,3 +70,55 @@ export const stackData = [
 ];
 
 export const radarData = [70, 80, 60, 75, 65];
+
+//healthChart.tsx
+export const chartData = [
+  {
+    label: "체중",
+    changeText: "-0.3kg",
+    currentValue: "7.0kg",
+    goalValue: "6.5kg",
+    progress: 0.65,
+    barColor: "#BCFFFE",
+  },
+  {
+    label: "산책",
+    changeText: "+1회",
+    currentValue: "4회",
+    goalValue: "6회",
+    progress: 0.67,
+    barColor: "#FF9C9C",
+  },
+  {
+    label: "식사",
+    changeText: "100g",
+    currentValue: "100g",
+    goalValue: "85g",
+    progress: 0.85,
+    barColor: "#FF9C9C",
+  },
+  {
+    label: "간식",
+    changeText: "3회",
+    currentValue: "3회",
+    goalValue: "6회",
+    progress: 0.5,
+    barColor: "#BCFFFE",
+  },
+  {
+    label: "루틴율",
+    changeText: "71%",
+    currentValue: "0%",
+    goalValue: "100%",
+    progress: 0.71,
+    barColor: "#BCFFFE",
+  },
+  {
+    label: "목표진행",
+    changeText: "71%",
+    currentValue: "0%",
+    goalValue: "목표 달성까지",
+    progress: 0.71,
+    barColor: "#BCFFFE",
+  },
+];

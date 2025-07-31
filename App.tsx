@@ -1,11 +1,13 @@
+import { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+
 import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Root from "./src/navigation/Roots";
-import { useEffect } from "react";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -29,13 +31,13 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <>
+    <GestureHandlerRootView style={{ flex: 1 }}>
       <StatusBar style="dark" />
       <SafeAreaProvider>
         <NavigationContainer>
           <Root />
         </NavigationContainer>
       </SafeAreaProvider>
-    </>
+    </GestureHandlerRootView>
   );
 }
