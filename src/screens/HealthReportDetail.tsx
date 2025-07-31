@@ -1,9 +1,24 @@
-import { ScrollView, StyleSheet, View } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { HORIZONTAL_PADDING } from "../constants";
-import colors from "../styles/colors";
-import CustomText from "../components/common/CustomText";
 
-export default function FamilyMemberManagement() {
+import colors from "../styles/colors";
+import { useEffect } from "react";
+
+export default function HealthReportDetail({
+  navigation: { setOptions },
+  route: {
+    params: { title },
+  },
+}) {
+  useEffect(() => {
+    setOptions({
+      title: title,
+      headerTitleStyle: {
+        fontSize: 20,
+        fontFamily: "Pretendard-SemiBold",
+      },
+    });
+  }, []);
   return (
     <View style={{ flex: 1, backgroundColor: colors.white }}>
       <ScrollView
@@ -11,14 +26,11 @@ export default function FamilyMemberManagement() {
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
       >
-        <CustomText style={{ fontSize: 14 }}>
-          함께 기록할수록 더 건강한 하루가 돼요!
-        </CustomText>
+        <Text>{title}</Text>
       </ScrollView>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",

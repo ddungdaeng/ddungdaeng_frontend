@@ -1,14 +1,9 @@
-import {
-  View,
-  StyleSheet,
-  ViewStyle,
-  TouchableOpacity,
-  Dimensions,
-} from "react-native";
+import { View, StyleSheet, ViewStyle, TouchableOpacity } from "react-native";
 import shadows from "../../styles/shadow";
 import colors from "../../styles/colors";
 import CustomText from "./CustomText";
 import { CONTENT_WIDTH } from "../../constants";
+import { useNavigation } from "@react-navigation/native";
 
 interface HealthReportProps {
   style?: ViewStyle;
@@ -27,6 +22,22 @@ export default function HealthReport({
   treatAmount,
   walkingRate,
 }: HealthReportProps) {
+  const navigation = useNavigation();
+  const handleReportPress = () => {
+    if (title === "이번주 건강 리포트") {
+      // 전체 리포트 보기 -> Drawer의 HealthReportCollection으로 이동
+      navigation.navigate("Main", {
+        screen: "HealthReportCollection",
+      });
+    } else {
+      // 자세히 보기 -> Stack의 HealthReportDetail로 이동
+      navigation.navigate("Stack", {
+        screen: "HealthReportDetail",
+        params: { title },
+      });
+    }
+  };
+
   return (
     <View style={[styles.container, style]}>
       <CustomText w="semibold" style={styles.reportTitle}>
@@ -52,8 +63,12 @@ export default function HealthReport({
           산책률: {walkingRate}회/7일
         </CustomText>
       </View>
-      <TouchableOpacity style={styles.reportButton}>
-        <CustomText style={styles.click}>전체 리포트 보기 {">"}</CustomText>
+      <TouchableOpacity style={styles.reportButton} onPress={handleReportPress}>
+        <CustomText style={styles.click}>
+          {title == "이번주 건강 리포트"
+            ? `전체 리포트 보기 >`
+            : `자세히 보기 >`}
+        </CustomText>
       </TouchableOpacity>
     </View>
   );
@@ -89,7 +104,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
   changeText: {
-    marginLeft: 8,
+    marginLeft: 5,
     fontSize: 8,
     color: colors.gray2,
   },

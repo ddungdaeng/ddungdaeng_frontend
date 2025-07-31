@@ -2,7 +2,7 @@ import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import TopTabs from "./TopTabs";
 import Settings from "../screens/Settings";
-import { View, TouchableOpacity, StyleSheet } from "react-native";
+import { View, TouchableOpacity, StyleSheet, Alert } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import colors from "../styles/colors";
 import Mypage from "../screens/Mypage";
@@ -14,6 +14,8 @@ import CustomText from "../components/common/CustomText";
 const Drawer = createDrawerNavigator();
 
 const Drawers = () => {
+  const goAlert = () => Alert.alert("알람입니당~");
+
   const Header = ({ navigation }) => {
     return (
       <View style={styles.header}>
@@ -27,7 +29,7 @@ const Drawers = () => {
 
         <View style={styles.rightIcons}>
           {/*알람*/}
-          <TouchableOpacity>
+          <TouchableOpacity onPress={goAlert}>
             <Ionicons name="notifications-outline" size={24} color="black" />
           </TouchableOpacity>
           {/*햄버거바*/}

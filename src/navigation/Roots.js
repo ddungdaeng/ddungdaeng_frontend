@@ -5,18 +5,24 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../styles/colors";
 import Onboarding from "../screens/Onboarding";
 import Drawers from "./Drawers";
+import Stack from "./Stacks";
 
 const Nav = createNativeStackNavigator(); //스택
 
 export default function Root() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
-      <Nav.Navigator screenOptions={{ headerShown: false }}>
+      <Nav.Navigator
+        screenOptions={{ presentation: "modal", headerShown: false }}
+      >
         {/* 온보딩 화면 */}
         {/* <Nav.Screen name="Onboarding" component={Onbroarding} /> */}
 
         {/* 메인 앱 네비게이션 */}
         <Nav.Screen name="Main" component={Drawers} />
+
+        {/* 디테일 */}
+        <Nav.Screen name="Stack" component={Stack} />
       </Nav.Navigator>
     </SafeAreaView>
   );
