@@ -1,10 +1,13 @@
-import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import { HORIZONTAL_PADDING } from "../../constants";
 
 import colors from "../../styles/colors";
 import { useEffect } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { StackParamList } from "../../types/navigation";
+
+import WeightCard from "../../components/healthReport/WeightCard";
+import HealthChart from "../../components/healthReport/HealthChart";
 
 type HealthReportDetailProps = NativeStackScreenProps<
   StackParamList,
@@ -33,16 +36,17 @@ export default function HealthReportDetail({
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
       >
-        <Text>{title}</Text>
+        <WeightCard />
+        <HealthChart />
       </ScrollView>
     </View>
   );
 }
 const styles = StyleSheet.create({
   container: {
+    marginTop: 56,
     alignItems: "center",
     paddingVertical: 24,
-    paddingHorizontal: HORIZONTAL_PADDING,
-    gap: 21,
+    paddingHorizontal: HORIZONTAL_PADDING + 20, //44
   },
 });
