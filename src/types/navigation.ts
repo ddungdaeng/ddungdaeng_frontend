@@ -4,7 +4,7 @@ export type RootStackParamList = {
   };
   Stack: {
     screen: string;
-    params?: any;
+    params?: { title: string } | undefined;
   };
 };
 
