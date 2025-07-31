@@ -1,9 +1,10 @@
 import React from "react";
-import { Modal, Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import { Modal, TouchableOpacity, View, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import CustomText from "../../common/CustomText";
-import shadows from "../../../styles/shadow";
-import colors from "../../../styles/colors";
+
+import CustomText from "../../../common/CustomText";
+import colors from "../../../../styles/colors";
+import shadows from "../../../../styles/shadow";
 
 interface ActionSheetMenuProps {
   isMenuOpen: boolean;

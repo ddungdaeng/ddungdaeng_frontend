@@ -6,9 +6,9 @@ import {
   Easing,
   LayoutChangeEvent,
 } from "react-native";
-import CustomText from "../common/CustomText";
-import colors from "../../styles/colors";
-import { CONTENT_WIDTH } from "../../constants";
+import CustomText from "../../common/CustomText";
+import { CONTENT_WIDTH } from "../../../constants";
+import colors from "../../../styles/colors";
 
 interface GoalWeightProgressProps {
   first: number;
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: 20,
     borderRadius: 12,
-    backgroundColor: "#E5E5E5",
+    backgroundColor: colors.gray4,
     overflow: "hidden",
     width: "100%",
     alignItems: "center",

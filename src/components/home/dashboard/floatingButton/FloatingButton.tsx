@@ -1,10 +1,10 @@
 import { TouchableOpacity, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import Write from "../../../assets/ic-write.svg";
-import Cancel from "../../../assets/ic-cancel.svg";
-import shadows from "../../../styles/shadow";
-import colors from "../../../styles/colors";
+import Write from "../../../../assets/ic-write.svg";
+import Cancel from "../../../../assets/ic-cancel.svg";
+import colors from "../../../../styles/colors";
+import shadows from "../../../../styles/shadow";
 
 export default function FloatingButton({
   onPress,

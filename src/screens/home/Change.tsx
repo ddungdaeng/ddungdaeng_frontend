@@ -2,7 +2,6 @@ import React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import CustomText from "../../components/common/CustomText";
 import colors from "../../styles/colors";
-import LineChartCard from "../../components/change/LineChartCard";
 import {
   barData,
   radarData,
@@ -10,9 +9,9 @@ import {
   walkData,
   weightData,
 } from "../../components/common/mockupData";
-import BarChartCard from "../../components/change/BarChartCard";
-import StackedBarChartCard from "../../components/change/StackedBarChartCard";
-import RadarChartCard from "../../components/change/RadarChartCard";
+import RadarChartCard from "../../components/home/change/RadarChartCard";
+import LineChartCard from "../../components/home/change/LineChartCard";
+import BarChartCard from "../../components/home/change/BarChartCard";
 
 export default function Change() {
   return (

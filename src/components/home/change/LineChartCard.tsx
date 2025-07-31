@@ -1,9 +1,11 @@
 import { View, StyleSheet, ViewStyle, Dimensions } from "react-native";
 import { LineChart } from "react-native-gifted-charts";
-import CustomText from "../common/CustomText";
-import colors from "../../styles/colors";
-import shadows from "../../styles/shadow";
-import { CARD_PADDING, CONTENT_WIDTH } from "../../constants";
+
+import CustomText from "../../common/CustomText";
+import colors from "../../../styles/colors";
+import shadows from "../../../styles/shadow";
+
+import { CARD_PADDING, CONTENT_WIDTH } from "../../../constants";
 
 interface LineChartCardProps {
   style?: ViewStyle;

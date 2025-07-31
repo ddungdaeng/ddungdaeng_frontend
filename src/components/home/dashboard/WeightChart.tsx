@@ -1,9 +1,10 @@
 import { View, StyleSheet, ViewStyle } from "react-native";
-import shadows from "../../styles/shadow";
-import colors from "../../styles/colors";
-import CustomText from "../common/CustomText";
 import { LineChart } from "react-native-gifted-charts";
-import { CARD_PADDING, CONTENT_WIDTH } from "../../constants";
+import { CARD_PADDING, CONTENT_WIDTH } from "../../../constants";
+
+import CustomText from "../../common/CustomText";
+import colors from "../../../styles/colors";
+import shadows from "../../../styles/shadow";
 
 interface WeightChartProps {
   style?: ViewStyle;

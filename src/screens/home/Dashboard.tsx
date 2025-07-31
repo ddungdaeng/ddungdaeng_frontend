@@ -4,13 +4,13 @@ import { ScrollView, View, StyleSheet, Dimensions } from "react-native";
 import colors from "../../styles/colors";
 import { weightData } from "../../components/common/mockupData";
 
-import FloatingButton from "../../components/dashboard/floatingButton/FloatingButton";
-import ActionSheetMenu from "../../components/dashboard/floatingButton/ActionSheetMenu";
-import InputModal from "../../components/dashboard/floatingButton/InputModal";
-import SummaryCardList from "../../components/dashboard/SummaryCardList";
-import CharacterLoad from "../../components/dashboard/CharacterLoad";
-import WeightChart from "../../components/dashboard/WeightChart";
-import GoalWeightProgress from "../../components/dashboard/GoalWeightProgress";
+import FloatingButton from "../../components/home/dashboard/floatingButton/FloatingButton";
+import ActionSheetMenu from "../../components/home/dashboard/floatingButton/ActionSheetMenu";
+import InputModal from "../../components/home/dashboard/floatingButton/InputModal";
+import SummaryCardList from "../../components/home/dashboard/SummaryCardList";
+import CharacterLoad from "../../components/home/dashboard/CharacterLoad";
+import WeightChart from "../../components/home/dashboard/WeightChart";
+import GoalWeightProgress from "../../components/home/dashboard/GoalWeightProgress";
 import HealthReport from "../../components/common/HealthReport";
 import { HORIZONTAL_PADDING } from "../../constants";
 

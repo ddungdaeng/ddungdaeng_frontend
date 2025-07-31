@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Modal, View, StyleSheet, TextInput } from "react-native";
-import CustomText from "../../common/CustomText";
-import colors from "../../../styles/colors";
 
-import MealDog from "../../../assets/mealCharacter.svg";
-import WalkDog from "../../../assets/walkCharacter.svg";
-import WeightDog from "../../../assets/weightCharacter.svg";
+import CustomText from "../../../common/CustomText";
+import colors from "../../../../styles/colors";
+
+import MealDog from "../../../../assets/mealCharacter.svg";
+import WalkDog from "../../../../assets/walkCharacter.svg";
+import WeightDog from "../../../../assets/weightCharacter.svg";
 
 type CategoryType = "weight" | "meal" | "walk";
 

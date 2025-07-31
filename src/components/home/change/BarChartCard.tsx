@@ -1,8 +1,8 @@
 import { View, StyleSheet, ViewStyle, Dimensions } from "react-native";
 import { BarChart } from "react-native-gifted-charts";
-import CustomText from "../common/CustomText";
-import colors from "../../styles/colors";
-import shadows from "../../styles/shadow";
+import CustomText from "../../common/CustomText";
+import colors from "../../../styles/colors";
+import shadows from "../../../styles/shadow";
 
 interface BarChartCardProps {
   style?: ViewStyle;

@@ -7,7 +7,7 @@ import BottomSheet, {
   BottomSheetModalProvider,
 } from "@gorhom/bottom-sheet";
 import CustomText from "../../components/common/CustomText";
-import Calendar from "../../components/detail/Calendar";
+import Calendar from "../../components/home/detail/Calendar";
 export default function Detail() {
   // ref
   const bottomSheetRef = useRef<BottomSheet>(null);

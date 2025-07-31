@@ -1,6 +1,6 @@
 import { View, StyleSheet } from "react-native";
-import Character from "../../assets/character.svg";
-import CustomText from "../common/CustomText";
+import Character from "../../../assets/character.svg";
+import CustomText from "../../common/CustomText";
 
 export default function CharacterLoad() {
   return (

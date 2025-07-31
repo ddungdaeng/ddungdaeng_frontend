@@ -1,9 +1,11 @@
 import { View, StyleSheet } from "react-native";
-import colors from "../../styles/colors";
-import shadows from "../../styles/shadow";
 import { LinearGradient } from "expo-linear-gradient";
-import CustomText from "../common/CustomText";
-import { CONTENT_WIDTH } from "../../constants";
+
+import colors from "../../../styles/colors";
+import CustomText from "../../common/CustomText";
+import shadows from "../../../styles/shadow";
+
+import { CONTENT_WIDTH } from "../../../constants";
 
 interface SummaryCardProps {
   category: string;

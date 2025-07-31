@@ -70,3 +70,55 @@ export const stackData = [
 ];
 
 export const radarData = [70, 80, 60, 75, 65];
+
+//healthChart.tsx
+export const chartData = [
+  {
+    label: "체중",
+    changeText: "-0.3kg",
+    currentValue: "7.0kg",
+    goalValue: "6.5kg",
+    progress: 0.65,
+    barColor: "#BCFFFE",
+  },
+  {
+    label: "산책",
+    changeText: "+1회",
+    currentValue: "4회",
+    goalValue: "6회",
+    progress: 0.67,
+    barColor: "#FF9C9C",
+  },
+  {
+    label: "식사",
+    changeText: "100g",
+    currentValue: "100g",
+    goalValue: "85g",
+    progress: 0.85,
+    barColor: "#FF9C9C",
+  },
+  {
+    label: "간식",
+    changeText: "3회",
+    currentValue: "3회",
+    goalValue: "6회",
+    progress: 0.5,
+    barColor: "#BCFFFE",
+  },
+  {
+    label: "루틴율",
+    changeText: "71%",
+    currentValue: "0%",
+    goalValue: "100%",
+    progress: 0.71,
+    barColor: "#BCFFFE",
+  },
+  {
+    label: "목표진행",
+    changeText: "71%",
+    currentValue: "0%",
+    goalValue: "목표 달성까지",
+    progress: 0.71,
+    barColor: "#BCFFFE",
+  },
+];
