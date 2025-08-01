@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { ScrollView, View, StyleSheet, Dimensions } from "react-native";
+import {
+  ScrollView,
+  View,
+  StyleSheet,
+  Dimensions,
+  RefreshControl,
+} from "react-native";
 
 import colors from "../../styles/colors";
 import { weightData } from "../../components/common/mockupData";
@@ -23,6 +29,7 @@ interface SelectedItem {
 export default function Dashboard() {
   const [menuVisible, setMenuVisible] = useState(false);
   const [selected, setSelected] = useState<SelectedItem | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
 
   const handleSelect = (
     type: "input" | "load",
@@ -43,12 +50,21 @@ export default function Dashboard() {
     setSelected({ type, category, label });
   };
 
+  const onRefresh = async () => {
+    setRefreshing(true);
+    // await queryClient.refetchQueries({ queryKey: ["tv"] });
+    setRefreshing(false);
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.white }}>
       <ScrollView
         style={{ flex: 1 }}
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
       >
         {/* 유저 로드 */}
         <CharacterLoad />

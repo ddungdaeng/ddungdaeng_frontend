@@ -1,8 +1,8 @@
-import { View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView, RefreshControl } from "react-native";
 import { HORIZONTAL_PADDING } from "../../constants";
 
 import colors from "../../styles/colors";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { StackParamList } from "../../types/navigation";
 
@@ -20,6 +20,8 @@ export default function HealthReportDetail({
     params: { title },
   },
 }: HealthReportDetailProps) {
+  const [refreshing, setRefreshing] = useState(false);
+
   useEffect(() => {
     navigation.setOptions({
       title: title,
@@ -29,12 +31,21 @@ export default function HealthReportDetail({
       },
     });
   }, [title, navigation]);
+
+  const onRefresh = async () => {
+    setRefreshing(true);
+    // await queryClient.refetchQueries({ queryKey: ["tv"] });
+    setRefreshing(false);
+  };
   return (
     <View style={{ flex: 1, backgroundColor: colors.white }}>
       <ScrollView
         style={{ flex: 1 }}
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
       >
         <WeightCard />
         <HealthChart />
