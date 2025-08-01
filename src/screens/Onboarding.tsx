@@ -11,8 +11,6 @@ import SadCharacter from "../assets/sadCharacter.svg";
 import DdungdaengTypo from "../assets/ddungdaeng.svg";
 import KakaoIcon from "../assets/ic-kakao.svg";
 
-const { height: screenHeight } = Dimensions.get("window");
-
 interface NavigationProp {
   replace: (routeName: string) => void;
 }
