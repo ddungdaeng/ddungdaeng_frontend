@@ -152,11 +152,11 @@ const styles = StyleSheet.create({
   },
   medalContainer: {
     marginVertical: 56,
+    gap: 6,
   },
   rankingRow: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 7,
     justifyContent: "space-between",
   },
   emptyMedal: {

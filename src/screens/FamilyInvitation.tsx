@@ -12,6 +12,7 @@ import WalkDog from "../assets/walkCharacter.svg";
 import { HORIZONTAL_PADDING } from "../constants";
 import colors from "../styles/colors";
 import shadows from "../styles/shadow";
+import NextFixedButton from "../components/common/NextFixedButton";
 
 export default function FamilyInvitation() {
   const [refreshing, setRefreshing] = useState(false);
@@ -68,13 +69,7 @@ export default function FamilyInvitation() {
       </ScrollView>
 
       {/* 하단 고정 버튼 */}
-      <View style={styles.bottomButtonWrap}>
-        <TouchableOpacity style={styles.nextButton}>
-          <CustomText w="semibold" style={styles.nextButtonText}>
-            다음
-          </CustomText>
-        </TouchableOpacity>
-      </View>
+      <NextFixedButton />
     </View>
   );
 }
@@ -136,23 +131,5 @@ const styles = StyleSheet.create({
   labelData: {
     fontSize: 16,
     color: colors.gray1,
-  },
-  bottomButtonWrap: {
-    position: "absolute",
-    bottom: 30,
-    left: 23,
-    right: 23,
-  },
-  nextButton: {
-    width: "100%",
-    backgroundColor: colors.primary1,
-    borderRadius: 10,
-    height: 54,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  nextButtonText: {
-    color: colors.white,
-    fontSize: 20,
   },
 });
