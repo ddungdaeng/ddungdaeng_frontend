@@ -14,13 +14,26 @@ import colors from "../styles/colors";
 import shadows from "../styles/shadow";
 import NextFixedButton from "../components/common/NextFixedButton";
 
-export default function FamilyInvitation() {
+interface NavigationProp {
+  replace: (routeName: string) => void;
+}
+interface FamilyInvitationProps {
+  navigation: NavigationProp;
+}
+
+export default function FamilyInvitation({
+  navigation,
+}: FamilyInvitationProps) {
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = async () => {
     setRefreshing(true);
     // await queryClient.refetchQueries({ queryKey: ["tv"] });
     setRefreshing(false);
+  };
+
+  const next = (): void => {
+    navigation.replace("Main");
   };
 
   // 반려견 정보 데이터
@@ -68,8 +81,8 @@ export default function FamilyInvitation() {
         </View>
       </ScrollView>
 
-      {/* 하단 고정 버튼 */}
-      <NextFixedButton />
+      {/* 하단 고정 버튼*/}
+      <NextFixedButton onPress={next} />
     </View>
   );
 }

@@ -2,10 +2,14 @@ import { StyleSheet, TouchableOpacity, View } from "react-native";
 import colors from "../../styles/colors";
 import CustomText from "./CustomText";
 
-export default function NextFixedButton() {
+interface NextFixedButtonProps {
+  onPress: () => void;
+}
+
+export default function NextFixedButton({ onPress }: NextFixedButtonProps) {
   return (
     <View style={styles.bottomButtonWrap}>
-      <TouchableOpacity style={styles.nextButton}>
+      <TouchableOpacity style={styles.nextButton} onPress={onPress}>
         <CustomText w="semibold" style={styles.nextButtonText}>
           다음
         </CustomText>
