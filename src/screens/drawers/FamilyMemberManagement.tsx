@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   },
   camera: {
     backgroundColor: colors.gray4,
-    borderRadius: "50%",
+    borderRadius: 60,
     width: 96,
     height: 96,
     justifyContent: "center",
