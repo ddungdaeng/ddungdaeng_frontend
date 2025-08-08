@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StyleSheet, ScrollView } from "react-native";
+import React, { useState } from "react";
+import { View, StyleSheet, ScrollView, RefreshControl } from "react-native";
 import CustomText from "../../components/common/CustomText";
 import colors from "../../styles/colors";
 import {
@@ -14,12 +14,23 @@ import LineChartCard from "../../components/home/change/LineChartCard";
 import BarChartCard from "../../components/home/change/BarChartCard";
 
 export default function Change() {
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = async () => {
+    setRefreshing(true);
+    // await queryClient.refetchQueries({ queryKey: ["tv"] });
+    setRefreshing(false);
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.white }}>
       <ScrollView
         style={{ flex: 1 }}
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
       >
         <CustomText w="semibold" style={styles.title}>
           얼마나 채웠개?

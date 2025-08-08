@@ -1,6 +1,6 @@
-import React, { useCallback, useMemo, useRef } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import colors from "../../styles/colors";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView, RefreshControl } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import BottomSheet, {
   BottomSheetView,
@@ -8,21 +8,37 @@ import BottomSheet, {
 } from "@gorhom/bottom-sheet";
 import CustomText from "../../components/common/CustomText";
 import Calendar from "../../components/home/detail/Calendar";
+
+//todo: 스타일 수정 필요
+//todo: 뒷배경 누르면 모달창 닫아지기
+
 export default function Detail() {
-  // ref
+  const [refreshing, setRefreshing] = useState(false);
+
   const bottomSheetRef = useRef<BottomSheet>(null);
-
-  //todo: 스타일 수정 필요
-  //todo: 뒷배경 누르면 모달창 닫아지기
-
   const snapPoints = useMemo(() => ["23%", "40%"], []); //처음 올릴 때 23%, 더 올리면 40%
 
+  const onRefresh = async () => {
+    setRefreshing(true);
+    // await queryClient.refetchQueries({ queryKey: ["tv"] });
+    setRefreshing(false);
+  };
   return (
     <GestureHandlerRootView style={styles.container}>
       <BottomSheetModalProvider>
         {/*여기에 내용 추가 */}
-        <View style={{ alignItems: "center" }}>
-          <Calendar />
+
+        <View style={{ flex: 1, backgroundColor: colors.white }}>
+          <ScrollView
+            style={{ flex: 1 }}
+            contentContainerStyle={styles.container}
+            showsVerticalScrollIndicator={false}
+            refreshControl={
+              <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+            }
+          >
+            <Calendar />
+          </ScrollView>
         </View>
         <BottomSheet
           ref={bottomSheetRef}

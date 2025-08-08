@@ -3,9 +3,9 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../styles/colors";
-import Onboarding from "../screens/Onboarding";
 import Drawers from "./Drawers";
 import Stack from "./Stacks";
+import Onboarding from "../screens/Onboarding";
 
 const Nav = createNativeStackNavigator(); //스택
 
@@ -16,7 +16,7 @@ export default function Root() {
         screenOptions={{ presentation: "modal", headerShown: false }}
       >
         {/* 온보딩 화면 */}
-        {/* <Nav.Screen name="Onboarding" component={Onbroarding} /> */}
+        <Nav.Screen name="Onboarding" component={Onboarding} />
 
         {/* 메인 앱 네비게이션 */}
         <Nav.Screen name="Main" component={Drawers} />

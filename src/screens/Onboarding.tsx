@@ -10,8 +10,7 @@ import FatCharacter from "../assets/fatCharacter.svg";
 import SadCharacter from "../assets/sadCharacter.svg";
 import DdungdaengTypo from "../assets/ddungdaeng.svg";
 import KakaoIcon from "../assets/ic-kakao.svg";
-
-const { height: screenHeight } = Dimensions.get("window");
+import NextFixedButton from "../components/common/NextFixedButton";
 
 interface NavigationProp {
   replace: (routeName: string) => void;
@@ -85,13 +84,7 @@ const Onboarding: React.FC<OnboardingProps> = ({ navigation }) => {
       </Swiper>
 
       {currIndex < 4 ? (
-        <View style={styles.bottomButtonWrap}>
-          <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
-            <CustomText w="bold" style={styles.nextButtonText}>
-              다음
-            </CustomText>
-          </TouchableOpacity>
-        </View>
+        <NextFixedButton onPress={handleNext} />
       ) : (
         <View style={styles.bottomButtonWrap}>
           <TouchableOpacity
@@ -158,18 +151,6 @@ const styles = StyleSheet.create({
     right: 0,
     alignItems: "center",
     paddingHorizontal: 23,
-  },
-  nextButton: {
-    width: "100%",
-    backgroundColor: colors.primary1,
-    borderRadius: 10,
-    height: 54,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  nextButtonText: {
-    color: colors.white,
-    fontSize: 20,
   },
   lastButton: {
     width: "100%",
