@@ -4,14 +4,18 @@ import CustomText from "./CustomText";
 
 interface NextFixedButtonProps {
   onPress: () => void;
+  text: string;
 }
 
-export default function NextFixedButton({ onPress }: NextFixedButtonProps) {
+export default function NextFixedButton({
+  onPress,
+  text,
+}: NextFixedButtonProps) {
   return (
     <View style={styles.bottomButtonWrap}>
       <TouchableOpacity style={styles.nextButton} onPress={onPress}>
         <CustomText w="semibold" style={styles.nextButtonText}>
-          다음
+          {text}
         </CustomText>
       </TouchableOpacity>
     </View>

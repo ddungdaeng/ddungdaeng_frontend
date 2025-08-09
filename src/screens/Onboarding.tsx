@@ -84,7 +84,7 @@ const Onboarding: React.FC<OnboardingProps> = ({ navigation }) => {
       </Swiper>
 
       {currIndex < 4 ? (
-        <NextFixedButton onPress={handleNext} />
+        <NextFixedButton onPress={handleNext} text="다음" />
       ) : (
         <View style={styles.bottomButtonWrap}>
           <TouchableOpacity

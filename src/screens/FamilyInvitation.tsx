@@ -82,7 +82,7 @@ export default function FamilyInvitation({
       </ScrollView>
 
       {/* 하단 고정 버튼*/}
-      <NextFixedButton onPress={next} />
+      <NextFixedButton onPress={next} text="공유하기" />
     </View>
   );
 }
