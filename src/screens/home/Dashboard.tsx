@@ -1,13 +1,8 @@
 import React, { useState } from "react";
-import {
-  ScrollView,
-  View,
-  StyleSheet,
-  Dimensions,
-  RefreshControl,
-} from "react-native";
+import { ScrollView, View, StyleSheet, RefreshControl } from "react-native";
 
 import colors from "../../styles/colors";
+import { PADDING } from "../../constants";
 import { weightData } from "../../components/common/mockupData";
 
 import FloatingButton from "../../components/home/dashboard/floatingButton/FloatingButton";
@@ -18,7 +13,6 @@ import CharacterLoad from "../../components/home/dashboard/CharacterLoad";
 import WeightChart from "../../components/home/dashboard/WeightChart";
 import GoalWeightProgress from "../../components/home/dashboard/GoalWeightProgress";
 import HealthReport from "../../components/common/HealthReport";
-import { HORIZONTAL_PADDING } from "../../constants";
 
 interface SelectedItem {
   type: "input" | "load";
@@ -115,8 +109,7 @@ export default function Dashboard() {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    paddingVertical: 24,
-    paddingHorizontal: HORIZONTAL_PADDING,
+    padding: PADDING,
     gap: 21,
   },
 });

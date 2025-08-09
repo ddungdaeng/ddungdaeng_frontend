@@ -1,5 +1,5 @@
 import { View, StyleSheet, ScrollView, RefreshControl } from "react-native";
-import { HORIZONTAL_PADDING } from "../../constants";
+import { PADDING } from "../../constants";
 
 import colors from "../../styles/colors";
 import { useEffect, useState } from "react";
@@ -58,6 +58,6 @@ const styles = StyleSheet.create({
     marginTop: 56,
     alignItems: "center",
     paddingVertical: 24,
-    paddingHorizontal: HORIZONTAL_PADDING + 20, //44
+    paddingHorizontal: PADDING + 20, //44
   },
 });

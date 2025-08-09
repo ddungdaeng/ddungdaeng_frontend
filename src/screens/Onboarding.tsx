@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { StyleSheet, TouchableOpacity, View, Dimensions } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import Swiper from "react-native-swiper";
 
 import colors from "../styles/colors";

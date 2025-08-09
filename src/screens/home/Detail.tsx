@@ -6,8 +6,10 @@ import BottomSheet, {
   BottomSheetView,
   BottomSheetModalProvider,
 } from "@gorhom/bottom-sheet";
+
 import CustomText from "../../components/common/CustomText";
 import Calendar from "../../components/home/detail/Calendar";
+import { PADDING } from "../../constants";
 
 //todo: 스타일 수정 필요
 //todo: 뒷배경 누르면 모달창 닫아지기
@@ -103,8 +105,7 @@ export default function Detail() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 24,
-    paddingVertical: 47,
+    padding: PADDING,
     backgroundColor: colors.white,
   },
   contentContainer: {

@@ -1,15 +1,9 @@
 import { useState } from "react";
-import {
-  RefreshControl,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { RefreshControl, ScrollView, StyleSheet, View } from "react-native";
 
 import CustomText from "../components/common/CustomText";
 import WalkDog from "../assets/walkCharacter.svg";
-import { HORIZONTAL_PADDING } from "../constants";
+import { PADDING } from "../constants";
 import colors from "../styles/colors";
 import shadows from "../styles/shadow";
 import NextFixedButton from "../components/common/NextFixedButton";
@@ -45,7 +39,7 @@ export default function FamilyInvitation({
   ];
 
   return (
-    <View style={styles.wrapper}>
+    <View style={{ flex: 1, backgroundColor: colors.white }}>
       <ScrollView
         style={{ flex: 1 }}
         contentContainerStyle={styles.container}
@@ -88,14 +82,10 @@ export default function FamilyInvitation({
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    backgroundColor: colors.white,
-  },
   container: {
     alignItems: "center",
     paddingVertical: 24,
-    paddingHorizontal: HORIZONTAL_PADDING,
+    paddingHorizontal: PADDING,
     paddingBottom: 100, // 하단 버튼 공간 확보
   },
   title: {

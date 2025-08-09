@@ -1,5 +1,5 @@
 import { RefreshControl, ScrollView, StyleSheet, View } from "react-native";
-import { HORIZONTAL_PADDING } from "../../constants";
+import { PADDING } from "../../constants";
 import colors from "../../styles/colors";
 import HealthReport from "../../components/common/HealthReport";
 import { useState } from "react";
@@ -51,8 +51,7 @@ export default function HealthReportCollection() {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    paddingVertical: 24,
-    paddingHorizontal: HORIZONTAL_PADDING,
+    padding: PADDING,
     gap: 21,
   },
 });

@@ -85,10 +85,8 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "space-between",
     borderRadius: 10,
-    paddingTop: 15,
-    paddingBottom: 9,
-    paddingLeft: 21,
-    paddingRight: 11,
+    paddingVertical: 15,
+    paddingHorizontal: 20,
     ...shadows.basic,
   },
   reportTitle: {
