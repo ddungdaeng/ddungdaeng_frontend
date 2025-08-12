@@ -16,7 +16,7 @@ export default function Root() {
         screenOptions={{ presentation: "modal", headerShown: false }}
       >
         {/* 온보딩 화면 */}
-        <Nav.Screen name="Onboarding" component={Onboarding} />
+        {/* <Nav.Screen name="Onboarding" component={Onboarding} /> */}
 
         {/* 메인 앱 네비게이션 */}
         <Nav.Screen name="Main" component={Drawers} />

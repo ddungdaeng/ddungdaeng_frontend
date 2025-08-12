@@ -5,8 +5,10 @@ const colors = {
   gray2: "#8E8E93",
   gray3: "#ABABAB",
   gray4: "#E2E2E2",
+  gray5: "#F3F4F6", //임의로 넣음
   black: "#000000",
   white: "#FFFFFF",
+  red: "#FF5252",
 };
 
 export default colors;

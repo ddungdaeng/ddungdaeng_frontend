@@ -17,3 +17,7 @@ export type StackParamList = {
   HealthReportDetail: { title: string };
   // 다른 Stack 스크린들 추가..
 };
+
+export interface NavigationProp {
+  replace: (routeName: string) => void;
+}

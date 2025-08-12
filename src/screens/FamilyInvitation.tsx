@@ -7,10 +7,8 @@ import { PADDING } from "../constants";
 import colors from "../styles/colors";
 import shadows from "../styles/shadow";
 import NextFixedButton from "../components/common/NextFixedButton";
+import { NavigationProp } from "../types/navigation";
 
-interface NavigationProp {
-  replace: (routeName: string) => void;
-}
 interface FamilyInvitationProps {
   navigation: NavigationProp;
 }

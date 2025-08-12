@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import Swiper from "react-native-swiper";
 
+import { NavigationProp } from "../types/navigation";
 import colors from "../styles/colors";
 import CustomText from "../components/common/CustomText";
 
@@ -12,9 +13,6 @@ import DdungdaengTypo from "../assets/ddungdaeng.svg";
 import KakaoIcon from "../assets/ic-kakao.svg";
 import NextFixedButton from "../components/common/NextFixedButton";
 
-interface NavigationProp {
-  replace: (routeName: string) => void;
-}
 interface OnboardingProps {
   navigation: NavigationProp;
 }
