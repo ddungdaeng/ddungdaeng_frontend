@@ -30,7 +30,8 @@ const Onboarding: React.FC<OnboardingProps> = ({ navigation }) => {
   };
 
   const handleKakaoLogin = (): void => {
-    navigation.replace("Main");
+    //fix: navigation 조건 수정
+    navigation.replace("DogRegistration");
   };
 
   return (

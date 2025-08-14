@@ -7,7 +7,7 @@ import {
   LayoutChangeEvent,
 } from "react-native";
 import CustomText from "../../common/CustomText";
-import { CONTENT_WIDTH } from "../../../constants";
+import { CONTENT_WIDTH } from "../../../constants/constants";
 import colors from "../../../styles/colors";
 
 interface GoalWeightProgressProps {

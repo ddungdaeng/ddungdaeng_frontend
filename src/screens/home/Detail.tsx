@@ -9,7 +9,7 @@ import BottomSheet, {
 
 import CustomText from "../../components/common/CustomText";
 import Calendar from "../../components/home/detail/Calendar";
-import { PADDING } from "../../constants";
+import { PADDING } from "../../constants/constants";
 
 //todo: 스타일 수정 필요
 //todo: 뒷배경 누르면 모달창 닫아지기

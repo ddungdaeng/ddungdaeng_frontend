@@ -1,6 +1,6 @@
 import { View, StyleSheet, ViewStyle } from "react-native";
 import { LineChart } from "react-native-gifted-charts";
-import { CARD_PADDING, CONTENT_WIDTH } from "../../../constants";
+import { CARD_PADDING, CONTENT_WIDTH } from "../../../constants/constants";
 
 import CustomText from "../../common/CustomText";
 import colors from "../../../styles/colors";

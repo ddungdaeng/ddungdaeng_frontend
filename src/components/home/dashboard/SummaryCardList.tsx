@@ -5,7 +5,7 @@ import MealIcon from "../../../assets/ic-meal.svg";
 import WalkIcon from "../../../assets/ic-walk.svg";
 import SnackIcon from "../../../assets/ic-snack.svg";
 
-import { CONTENT_WIDTH } from "../../../constants";
+import { CONTENT_WIDTH } from "../../../constants/constants";
 
 interface SummaryCardListProps {
   style?: ViewStyle;

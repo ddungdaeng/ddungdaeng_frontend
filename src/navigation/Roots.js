@@ -6,6 +6,7 @@ import colors from "../styles/colors";
 import Drawers from "./Drawers";
 import Stack from "./Stacks";
 import Onboarding from "../screens/Onboarding";
+import DogRegistration from "../screens/DogRegistration";
 
 const Nav = createNativeStackNavigator(); //스택
 
@@ -16,7 +17,10 @@ export default function Root() {
         screenOptions={{ presentation: "modal", headerShown: false }}
       >
         {/* 온보딩 화면 */}
-        {/* <Nav.Screen name="Onboarding" component={Onboarding} /> */}
+        <Nav.Screen name="Onboarding" component={Onboarding} />
+
+        {/* 반려견 등록 화면 */}
+        <Nav.Screen name="DogRegistration" component={DogRegistration} />
 
         {/* 메인 앱 네비게이션 */}
         <Nav.Screen name="Main" component={Drawers} />

@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
   bottomButtonWrap: {
     position: "absolute",
     bottom: 30,
-    left: 23,
-    right: 23,
+    left: 24,
+    right: 24,
   },
   nextButton: {
     width: "100%",

@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { PADDING } from "../../constants";
+import { PADDING } from "../../constants/constants";
 
 import colors from "../../styles/colors";
 import shadows from "../../styles/shadow";

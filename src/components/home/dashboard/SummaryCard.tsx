@@ -5,7 +5,7 @@ import colors from "../../../styles/colors";
 import CustomText from "../../common/CustomText";
 import shadows from "../../../styles/shadow";
 
-import { CONTENT_WIDTH } from "../../../constants";
+import { CONTENT_WIDTH } from "../../../constants/constants";
 
 interface SummaryCardProps {
   category: string;

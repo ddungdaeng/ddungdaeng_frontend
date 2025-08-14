@@ -2,7 +2,7 @@ import { useState } from "react";
 import CustomText from "../../components/common/CustomText";
 import { RefreshControl, ScrollView, View, StyleSheet } from "react-native";
 import colors from "../../styles/colors";
-import { PADDING } from "../../constants";
+import { PADDING } from "../../constants/constants";
 
 export default function DogProfileManagement() {
   const [refreshing, setRefreshing] = useState(false);

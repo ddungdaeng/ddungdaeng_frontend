@@ -2,7 +2,7 @@ import { View, StyleSheet, ViewStyle, TouchableOpacity } from "react-native";
 import shadows from "../../styles/shadow";
 import colors from "../../styles/colors";
 import CustomText from "./CustomText";
-import { CONTENT_WIDTH } from "../../constants";
+import { CONTENT_WIDTH } from "../../constants/constants";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "../../types/navigation";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import Svg, { Polygon, Circle, Line, Text as SvgText } from "react-native-svg";
-import { SCALE_FACTOR } from "../../../constants";
+import { SCALE_FACTOR } from "../../../constants/constants";
 
 interface RadarChartCardProps {
   data: number[];

@@ -1,5 +1,5 @@
 import { RefreshControl, ScrollView, StyleSheet, View } from "react-native";
-import { PADDING } from "../../constants";
+import { PADDING } from "../../constants/constants";
 import colors from "../../styles/colors";
 import HealthReport from "../../components/common/HealthReport";
 import { useState } from "react";

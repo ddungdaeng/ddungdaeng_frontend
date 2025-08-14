@@ -11,7 +11,7 @@ import {
 import RadarChartCard from "../../components/home/change/RadarChartCard";
 import LineChartCard from "../../components/home/change/LineChartCard";
 import BarChartCard from "../../components/home/change/BarChartCard";
-import { PADDING } from "../../constants";
+import { PADDING } from "../../constants/constants";
 
 export default function Change() {
   const [refreshing, setRefreshing] = useState(false);

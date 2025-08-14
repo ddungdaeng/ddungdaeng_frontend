@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ScrollView, View, StyleSheet, RefreshControl } from "react-native";
 
 import colors from "../../styles/colors";
-import { PADDING } from "../../constants";
+import { PADDING } from "../../constants/constants";
 import { weightData } from "../../components/common/mockupData";
 
 import FloatingButton from "../../components/home/dashboard/floatingButton/FloatingButton";

@@ -3,7 +3,7 @@ import { RefreshControl, ScrollView, StyleSheet, View } from "react-native";
 
 import CustomText from "../components/common/CustomText";
 import WalkDog from "../assets/walkCharacter.svg";
-import { PADDING } from "../constants";
+import { PADDING } from "../constants/constants";
 import colors from "../styles/colors";
 import shadows from "../styles/shadow";
 import NextFixedButton from "../components/common/NextFixedButton";
