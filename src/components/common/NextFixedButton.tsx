@@ -13,8 +13,8 @@ export default function NextFixedButton({
 }: NextFixedButtonProps) {
   return (
     <View style={styles.bottomButtonWrap}>
-      <TouchableOpacity style={styles.nextButton} onPress={onPress}>
-        <CustomText w="semibold" style={styles.nextButtonText}>
+      <TouchableOpacity style={styles.ButtonContainer} onPress={onPress}>
+        <CustomText variant="sub2" style={styles.buttonText}>
           {text}
         </CustomText>
       </TouchableOpacity>
@@ -29,16 +29,14 @@ const styles = StyleSheet.create({
     left: 24,
     right: 24,
   },
-  nextButton: {
-    width: "100%",
+  ButtonContainer: {
     backgroundColor: colors.primary1,
     borderRadius: 10,
-    height: 54,
-    justifyContent: "center",
+    paddingVertical: 16,
+    paddingHorizontal: 20,
     alignItems: "center",
   },
-  nextButtonText: {
+  buttonText: {
     color: colors.white,
-    fontSize: 20,
   },
 });

@@ -5,7 +5,6 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
-  TouchableOpacity,
   Animated,
 } from "react-native";
 import colors from "../styles/colors";
@@ -17,12 +16,12 @@ import { PhotoStep } from "../components/registration/PhotoStep";
 import { REGISTRATION_STEPS } from "../constants/registrationSteps";
 import { PADDING } from "../constants/constants";
 import { NavigationProp } from "../types/navigation";
+import NextFixedButton from "../components/common/NextFixedButton";
 
 interface DogRegistrationProps {
   navigation: NavigationProp;
 }
 
-//todo: 애니메이션 추가
 export default function DogRegistration({ navigation }: DogRegistrationProps) {
   const { dogInfo, currentStep, updateDogInfo, nextStep, getVisibleSteps } =
     useDogRegistrationStore();
@@ -40,14 +39,11 @@ export default function DogRegistration({ navigation }: DogRegistrationProps) {
     return value.trim().length > 0;
   };
 
+  //fix: 애니메이션 적용 안됨..
   // 새로운 단계가 추가될 때 애니메이션 초기화
   useEffect(() => {
-    console.log("visibleSteps:", visibleSteps);
-
     visibleSteps.forEach((stepIndex, index) => {
       if (!stepAnimations.current[stepIndex]) {
-        console.log("애니메이션 초기화 for step:", stepIndex);
-
         // 새로운 단계는 0에서 시작 (투명하고 위에서 시작)
         stepAnimations.current[stepIndex] = new Animated.Value(
           stepIndex === currentStep ? 0 : 1
@@ -55,7 +51,6 @@ export default function DogRegistration({ navigation }: DogRegistrationProps) {
 
         // 현재 단계인 경우 페이드인 + 슬라이드 애니메이션
         if (stepIndex === currentStep) {
-          console.log("현재 단계 애니메이션 실행:", stepIndex);
           Animated.spring(stepAnimations.current[stepIndex], {
             toValue: 1,
             friction: 8,
@@ -121,8 +116,6 @@ export default function DogRegistration({ navigation }: DogRegistrationProps) {
     const isCurrentStep = stepIndex === currentStep;
     const animatedValue =
       stepAnimations.current[stepIndex] || new Animated.Value(1);
-
-    console.log("renderStep 호출:", stepIndex, "현재단계:", currentStep);
 
     const commonProps = {
       step,
@@ -221,14 +214,7 @@ export default function DogRegistration({ navigation }: DogRegistrationProps) {
       </ScrollView>
 
       {isLastStep && dogInfo.photo && (
-        <TouchableOpacity
-          style={styles.completeButton}
-          onPress={handleComplete}
-        >
-          <CustomText variant="sub2" style={styles.buttonText}>
-            등록 완료
-          </CustomText>
-        </TouchableOpacity>
+        <NextFixedButton onPress={handleComplete} text="등록 완료" />
       )}
     </KeyboardAvoidingView>
   );
