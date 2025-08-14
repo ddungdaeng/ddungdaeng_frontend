@@ -1,33 +1,72 @@
-//최상위 네비게이션
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../styles/colors";
 import Drawers from "./Drawers";
-import Stack from "./Stacks";
 import Onboarding from "../screens/Onboarding";
 import DogRegistration from "../screens/DogRegistration";
+import HealthReportDetail from "../screens/drawers/HealthReportDetail";
 
-const Nav = createNativeStackNavigator(); //스택
+const RootStack = createNativeStackNavigator();
 
 export default function Root() {
+  //나중에 AsyncStorage나 상태관리로 체크
+  const isFirstLaunch = true; // 첫 실행 여부
+  const hasDogRegistered = false; // 반려견 등록 여부
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
-      <Nav.Navigator
-        screenOptions={{ presentation: "modal", headerShown: false }}
+      <RootStack.Navigator
+        screenOptions={{
+          headerShown: false,
+          animation: "slide_from_right", //전환 애니메이션
+        }}
+        // 초기 화면 결정 로직
+        initialRouteName={
+          !isFirstLaunch && hasDogRegistered ? "MainApp" : "Onboarding"
+        }
       >
-        {/* 온보딩 화면 */}
-        <Nav.Screen name="Onboarding" component={Onboarding} />
+        {/* 온보딩 플로우 */}
+        <RootStack.Group>
+          <RootStack.Screen
+            name="Onboarding"
+            component={Onboarding}
+            options={{
+              gestureEnabled: false, // 뒤로가기 제스처 비활성화
+            }}
+          />
+          <RootStack.Screen
+            name="DogRegistration"
+            component={DogRegistration}
+            options={{
+              gestureEnabled: false, // 등록 중 뒤로가기 방지
+            }}
+          />
+        </RootStack.Group>
 
-        {/* 반려견 등록 화면 */}
-        <Nav.Screen name="DogRegistration" component={DogRegistration} />
+        {/* 메인 앱 */}
+        <RootStack.Screen
+          name="Main"
+          component={Drawers}
+          options={{
+            gestureEnabled: false, // 메인에서 온보딩으로 돌아가지 않도록
+          }}
+        />
 
-        {/* 메인 앱 네비게이션 */}
-        <Nav.Screen name="Main" component={Drawers} />
-
-        {/* 디테일 */}
-        <Nav.Screen name="Stack" component={Stack} />
-      </Nav.Navigator>
+        {/* 모달/디테일 화면들 */}
+        <RootStack.Group screenOptions={{ presentation: "modal" }}>
+          <RootStack.Screen
+            name="HealthReportDetail"
+            component={HealthReportDetail}
+            options={{
+              headerShown: true,
+              headerTitle: "건강 리포트 상세",
+              headerBackTitle: "뒤로",
+            }}
+          />
+          {/* 추가 모달 화면들을 여기에 */}
+        </RootStack.Group>
+      </RootStack.Navigator>
     </SafeAreaView>
   );
 }
