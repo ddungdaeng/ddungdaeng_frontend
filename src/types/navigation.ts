@@ -36,4 +36,5 @@ export type StackParamList = {
 
 export interface NavigationProp {
   replace: (routeName: string) => void;
+  navigate: (routeName: string) => void;
 }

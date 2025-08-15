@@ -31,7 +31,7 @@ const Onboarding: React.FC<OnboardingProps> = ({ navigation }) => {
 
   const handleKakaoLogin = (): void => {
     // 카카오 로그인 로직
-    navigation.replace("KaKaoLoginWebview");
+    navigation.navigate("KaKaoLoginWebview");
   };
 
   return (

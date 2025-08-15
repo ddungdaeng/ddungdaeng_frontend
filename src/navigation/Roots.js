@@ -7,6 +7,7 @@ import Onboarding from "../screens/Onboarding";
 import DogRegistration from "../screens/DogRegistration";
 import HealthReportDetail from "../screens/drawers/HealthReportDetail";
 import KaKaoLoginWebview from "../components/login/KaKaoLoginWebview";
+import KaKaoLoginRedirect from "../components/login/KaKaoLoginRedirect";
 
 const RootStack = createNativeStackNavigator();
 
@@ -28,7 +29,7 @@ export default function Root() {
         }
       >
         {/* 온보딩 플로우 */}
-        {/* <RootStack.Group>
+        <RootStack.Group>
           <RootStack.Screen
             name="Onboarding"
             component={Onboarding}
@@ -47,13 +48,23 @@ export default function Root() {
             }}
           />
           <RootStack.Screen
+            name="KaKaoLoginRedirect"
+            component={KaKaoLoginRedirect}
+            options={{
+              gestureEnabled: true,
+              headerShown: false,
+              headerTitle: "카카오 로그인 리다이렉트",
+              headerBackTitle: "뒤로",
+            }}
+          />
+          <RootStack.Screen
             name="DogRegistration"
             component={DogRegistration}
             options={{
               gestureEnabled: false, // 등록 중 뒤로가기 방지
             }}
           />
-        </RootStack.Group> */}
+        </RootStack.Group>
 
         {/* 메인 앱 */}
         <RootStack.Screen
