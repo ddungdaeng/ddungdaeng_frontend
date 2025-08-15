@@ -70,7 +70,7 @@ const Drawers = () => {
       />
       <Drawer.Screen
         name="DogProfileManagement"
-        component={DogRegistration}
+        component={DogProfileManagement}
         options={{ title: "반려견 프로필 관리" }}
       />
       <Drawer.Screen
