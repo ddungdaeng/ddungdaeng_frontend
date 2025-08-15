@@ -2,7 +2,7 @@ import { View, StyleSheet, ViewStyle, TouchableOpacity } from "react-native";
 import shadows from "../../styles/shadow";
 import colors from "../../styles/colors";
 import CustomText from "./CustomText";
-import { CONTENT_WIDTH } from "../../constants";
+import { CONTENT_WIDTH } from "../../constants/constants";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "../../types/navigation";
 
@@ -34,9 +34,12 @@ export default function HealthReport({
       });
     } else {
       // 자세히 보기 -> Stack의 HealthReportDetail로 이동
-      navigation.navigate("Stack", {
-        screen: "HealthReportDetail",
-        params: { title },
+      navigation.navigate("HealthReportDetail", {
+        title,
+        averageWeight,
+        feedingAmount,
+        treatAmount,
+        walkingRate,
       });
     }
   };
@@ -85,10 +88,8 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "space-between",
     borderRadius: 10,
-    paddingTop: 15,
-    paddingBottom: 9,
-    paddingLeft: 21,
-    paddingRight: 11,
+    paddingVertical: 15,
+    paddingHorizontal: 20,
     ...shadows.basic,
   },
   reportTitle: {

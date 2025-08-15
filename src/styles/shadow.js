@@ -3,10 +3,10 @@ const shadows = {
     shadowColor: "#000000",
     shadowOffset: {
       width: 0,
-      height: 6,
+      height: 4,
     },
-    shadowOpacity: 0.2,
-    shadowRadius: 7,
+    shadowOpacity: 0.12,
+    shadowRadius: 8,
     elevation: 5, // Android용
   },
 

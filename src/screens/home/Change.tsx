@@ -5,13 +5,13 @@ import colors from "../../styles/colors";
 import {
   barData,
   radarData,
-  stackData,
   walkData,
   weightData,
 } from "../../components/common/mockupData";
 import RadarChartCard from "../../components/home/change/RadarChartCard";
 import LineChartCard from "../../components/home/change/LineChartCard";
 import BarChartCard from "../../components/home/change/BarChartCard";
+import { PADDING } from "../../constants/constants";
 
 export default function Change() {
   const [refreshing, setRefreshing] = useState(false);
@@ -76,8 +76,7 @@ export default function Change() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 23,
-    paddingHorizontal: 24,
+    padding: PADDING,
     gap: 28,
   },
   title: {

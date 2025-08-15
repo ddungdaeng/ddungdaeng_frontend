@@ -5,7 +5,7 @@ import CustomText from "../../common/CustomText";
 import colors from "../../../styles/colors";
 import shadows from "../../../styles/shadow";
 
-import { CARD_PADDING, CONTENT_WIDTH } from "../../../constants";
+import { CARD_PADDING, CONTENT_WIDTH } from "../../../constants/constants";
 
 interface LineChartCardProps {
   style?: ViewStyle;

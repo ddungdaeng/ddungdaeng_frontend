@@ -1,22 +1,14 @@
 import { useState } from "react";
-import {
-  RefreshControl,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { RefreshControl, ScrollView, StyleSheet, View } from "react-native";
 
 import CustomText from "../components/common/CustomText";
 import WalkDog from "../assets/walkCharacter.svg";
-import { HORIZONTAL_PADDING } from "../constants";
+import { PADDING } from "../constants/constants";
 import colors from "../styles/colors";
 import shadows from "../styles/shadow";
 import NextFixedButton from "../components/common/NextFixedButton";
+import { NavigationProp } from "../types/navigation";
 
-interface NavigationProp {
-  replace: (routeName: string) => void;
-}
 interface FamilyInvitationProps {
   navigation: NavigationProp;
 }
@@ -45,7 +37,7 @@ export default function FamilyInvitation({
   ];
 
   return (
-    <View style={styles.wrapper}>
+    <View style={{ flex: 1, backgroundColor: colors.white }}>
       <ScrollView
         style={{ flex: 1 }}
         contentContainerStyle={styles.container}
@@ -82,20 +74,16 @@ export default function FamilyInvitation({
       </ScrollView>
 
       {/* 하단 고정 버튼*/}
-      <NextFixedButton onPress={next} />
+      <NextFixedButton onPress={next} text="공유하기" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    backgroundColor: colors.white,
-  },
   container: {
     alignItems: "center",
     paddingVertical: 24,
-    paddingHorizontal: HORIZONTAL_PADDING,
+    paddingHorizontal: PADDING,
     paddingBottom: 100, // 하단 버튼 공간 확보
   },
   title: {

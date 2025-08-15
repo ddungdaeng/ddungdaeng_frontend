@@ -4,14 +4,18 @@ import CustomText from "./CustomText";
 
 interface NextFixedButtonProps {
   onPress: () => void;
+  text: string;
 }
 
-export default function NextFixedButton({ onPress }: NextFixedButtonProps) {
+export default function NextFixedButton({
+  onPress,
+  text,
+}: NextFixedButtonProps) {
   return (
     <View style={styles.bottomButtonWrap}>
-      <TouchableOpacity style={styles.nextButton} onPress={onPress}>
-        <CustomText w="semibold" style={styles.nextButtonText}>
-          다음
+      <TouchableOpacity style={styles.ButtonContainer} onPress={onPress}>
+        <CustomText variant="sub2" style={styles.buttonText}>
+          {text}
         </CustomText>
       </TouchableOpacity>
     </View>
@@ -22,19 +26,17 @@ const styles = StyleSheet.create({
   bottomButtonWrap: {
     position: "absolute",
     bottom: 30,
-    left: 23,
-    right: 23,
+    left: 24,
+    right: 24,
   },
-  nextButton: {
-    width: "100%",
+  ButtonContainer: {
     backgroundColor: colors.primary1,
     borderRadius: 10,
-    height: 54,
-    justifyContent: "center",
+    paddingVertical: 16,
+    paddingHorizontal: 20,
     alignItems: "center",
   },
-  nextButtonText: {
+  buttonText: {
     color: colors.white,
-    fontSize: 20,
   },
 });

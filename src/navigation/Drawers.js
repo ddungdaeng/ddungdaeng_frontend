@@ -12,6 +12,7 @@ import Settings from "../screens/drawers/Settings";
 import FamilyMemberManagement from "../screens/drawers/FamilyMemberManagement";
 import HealthReportCollection from "../screens/drawers/HealthReportCollection";
 import DogProfileManagement from "../screens/drawers/DogProfileManagement";
+import DogRegistration from "../screens/DogRegistration";
 
 const Drawer = createDrawerNavigator();
 

@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
-import { StyleSheet, TouchableOpacity, View, Dimensions } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import Swiper from "react-native-swiper";
 
+import { NavigationProp } from "../types/navigation";
 import colors from "../styles/colors";
 import CustomText from "../components/common/CustomText";
 
@@ -12,9 +13,6 @@ import DdungdaengTypo from "../assets/ddungdaeng.svg";
 import KakaoIcon from "../assets/ic-kakao.svg";
 import NextFixedButton from "../components/common/NextFixedButton";
 
-interface NavigationProp {
-  replace: (routeName: string) => void;
-}
 interface OnboardingProps {
   navigation: NavigationProp;
 }
@@ -32,7 +30,8 @@ const Onboarding: React.FC<OnboardingProps> = ({ navigation }) => {
   };
 
   const handleKakaoLogin = (): void => {
-    navigation.replace("Main");
+    // 카카오 로그인 로직
+    navigation.navigate("KaKaoLoginWebview");
   };
 
   return (
@@ -84,7 +83,7 @@ const Onboarding: React.FC<OnboardingProps> = ({ navigation }) => {
       </Swiper>
 
       {currIndex < 4 ? (
-        <NextFixedButton onPress={handleNext} />
+        <NextFixedButton onPress={handleNext} text="다음" />
       ) : (
         <View style={styles.bottomButtonWrap}>
           <TouchableOpacity

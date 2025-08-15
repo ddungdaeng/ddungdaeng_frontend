@@ -1,11 +1,10 @@
 import { View, StyleSheet } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 
 import colors from "../../../styles/colors";
 import CustomText from "../../common/CustomText";
 import shadows from "../../../styles/shadow";
 
-import { CONTENT_WIDTH } from "../../../constants";
+import { CONTENT_WIDTH } from "../../../constants/constants";
 
 interface SummaryCardProps {
   category: string;
@@ -26,11 +25,7 @@ export default function SummaryCard({
 }: SummaryCardProps) {
   return (
     <View style={styles.shadowWrapper}>
-      <LinearGradient
-        colors={["#BCFFFE", `${colors.primary1}B3`]} // B3 = 70% 투명도
-        locations={[0.63, 1.0]}
-        style={styles.layout}
-      >
+      <View style={styles.layout}>
         <View style={styles.card}>
           <CustomText style={styles.category}>{category}</CustomText>
           {
@@ -48,7 +43,7 @@ export default function SummaryCard({
           </CustomText>
           <View style={styles.iconContainer}>{icon}</View>
         </View>
-      </LinearGradient>
+      </View>
     </View>
   );
 }
@@ -61,13 +56,14 @@ const styles = StyleSheet.create({
     width: CARD_WIDTH, // 동적으로 계산된 너비 사용
     height: 150,
     borderRadius: 10,
+    backgroundColor: colors.primary2,
   },
   card: {
     flex: 1,
     padding: 16,
   },
   iconContainer: {
-    position: "absolute", // absolute로 변경해서 레이아웃에 영향 안주도록
+    position: "absolute",
     right: 15,
     bottom: 15,
     justifyContent: "center",

@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { HORIZONTAL_PADDING } from "../../constants";
+import { PADDING } from "../../constants/constants";
 
 import colors from "../../styles/colors";
 import shadows from "../../styles/shadow";
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     paddingVertical: 24,
-    paddingHorizontal: HORIZONTAL_PADDING,
+    paddingHorizontal: PADDING,
   },
   text: {
     color: colors.gray1,
