@@ -13,6 +13,10 @@ interface ChartItemProps {
   barColor: string;
 }
 
+interface HealthChartProps {
+  style?: any;
+}
+
 const ChartItem = ({
   label,
   changeText,
@@ -36,7 +40,7 @@ const ChartItem = ({
             style={[
               styles.barFill,
               {
-                width: `${progress * 100}%`,
+                width: `${Math.min(progress * 100, 100)}%`, // 100% 초과 방지
                 backgroundColor: barColor,
               },
             ]}
@@ -50,10 +54,6 @@ const ChartItem = ({
     </View>
   );
 };
-
-interface HealthChartProps {
-  style?: any;
-}
 
 export default function HealthChart({ style }: HealthChartProps) {
   return (

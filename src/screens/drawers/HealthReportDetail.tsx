@@ -1,25 +1,33 @@
 import { View, StyleSheet, ScrollView, RefreshControl } from "react-native";
 import { PADDING } from "../../constants/constants";
-
 import colors from "../../styles/colors";
 import { useEffect, useState } from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { StackParamList } from "../../types/navigation";
+import { RootStackParamList } from "../../types/navigation";
+import { RouteProp, useRoute } from "@react-navigation/native";
 
 import WeightCard from "../../components/healthReport/WeightCard";
 import HealthChart from "../../components/healthReport/HealthChart";
 
+// Props 타입 정의 변경
 type HealthReportDetailProps = NativeStackScreenProps<
-  StackParamList,
+  RootStackParamList,
+  "HealthReportDetail"
+>;
+
+// Route 타입 정의
+type HealthReportDetailRouteProp = RouteProp<
+  RootStackParamList,
   "HealthReportDetail"
 >;
 
 export default function HealthReportDetail({
   navigation,
-  route: {
-    params: { title },
-  },
 }: HealthReportDetailProps) {
+  const route = useRoute<HealthReportDetailRouteProp>();
+  const { title, averageWeight, feedingAmount, treatAmount, walkingRate } =
+    route.params;
+
   const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
@@ -37,6 +45,7 @@ export default function HealthReportDetail({
     // await queryClient.refetchQueries({ queryKey: ["tv"] });
     setRefreshing(false);
   };
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.white }}>
       <ScrollView
@@ -47,12 +56,17 @@ export default function HealthReportDetail({
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
       >
-        <WeightCard />
+        {/* WeightCard와 HealthChart에 파라미터 전달 */}
+        <WeightCard
+          averageWeight={averageWeight}
+          previousWeight={averageWeight - 0.3} //fix: 이전 체중 (0.3kg 감량 표시..), 나중에 이전 몸무게 데이터 받아서 수정하기
+        />
         <HealthChart />
       </ScrollView>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     marginTop: 56,

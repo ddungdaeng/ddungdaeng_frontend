@@ -34,9 +34,12 @@ export default function HealthReport({
       });
     } else {
       // 자세히 보기 -> Stack의 HealthReportDetail로 이동
-      navigation.navigate("Stack", {
-        screen: "HealthReportDetail",
-        params: { title },
+      navigation.navigate("HealthReportDetail", {
+        title,
+        averageWeight,
+        feedingAmount,
+        treatAmount,
+        walkingRate,
       });
     }
   };

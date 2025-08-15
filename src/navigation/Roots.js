@@ -6,6 +6,7 @@ import Drawers from "./Drawers";
 import Onboarding from "../screens/Onboarding";
 import DogRegistration from "../screens/DogRegistration";
 import HealthReportDetail from "../screens/drawers/HealthReportDetail";
+import KaKaoLoginWebview from "../components/login/KaKaoLoginWebview";
 
 const RootStack = createNativeStackNavigator();
 
@@ -27,12 +28,22 @@ export default function Root() {
         }
       >
         {/* 온보딩 플로우 */}
-        <RootStack.Group>
+        {/* <RootStack.Group>
           <RootStack.Screen
             name="Onboarding"
             component={Onboarding}
             options={{
               gestureEnabled: false, // 뒤로가기 제스처 비활성화
+            }}
+          />
+          <RootStack.Screen
+            name="KaKaoLoginWebview"
+            component={KaKaoLoginWebview}
+            options={{
+              gestureEnabled: true,
+              headerShown: false,
+              headerTitle: "카카오 로그인",
+              headerBackTitle: "뒤로",
             }}
           />
           <RootStack.Screen
@@ -42,7 +53,7 @@ export default function Root() {
               gestureEnabled: false, // 등록 중 뒤로가기 방지
             }}
           />
-        </RootStack.Group>
+        </RootStack.Group> */}
 
         {/* 메인 앱 */}
         <RootStack.Screen

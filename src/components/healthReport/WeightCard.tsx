@@ -6,14 +6,30 @@ import CustomText from "../common/CustomText";
 import colors from "../../styles/colors";
 import shadows from "../../styles/shadow";
 
-export default function WeightCard() {
+interface WeightCardProps {
+  averageWeight?: number;
+  previousWeight?: number;
+}
+
+export default function WeightCard({
+  averageWeight = 0,
+  previousWeight = 0,
+}: WeightCardProps) {
+  // 체중 변화 계산
+  const weightChange = averageWeight - previousWeight;
+  const isGain = weightChange > 0;
+  const changeText =
+    weightChange === 0
+      ? "체중 유지"
+      : `${Math.abs(weightChange).toFixed(1)}kg ${isGain ? "증가" : "감량"}`;
+
   return (
     <View style={styles.card}>
       <WeightDog width={110} height={118} />
       <CustomText w="semibold" style={styles.cardName}>
         체중 카드
       </CustomText>
-      <CustomText style={styles.weightData}>0.3kg 감량</CustomText>
+      <CustomText style={styles.weightData}>{changeText}</CustomText>
     </View>
   );
 }
