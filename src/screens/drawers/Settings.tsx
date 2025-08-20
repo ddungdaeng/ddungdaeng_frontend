@@ -1,10 +1,14 @@
+import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Linking } from "react-native";
 
 export default function Settings() {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>설정 화면</Text>
-    </View>
+    <DrawerContentScrollView>
+      <DrawerItem
+        label="Help"
+        onPress={() => Linking.openURL("https://mywebsite.com/help")}
+      />
+    </DrawerContentScrollView>
   );
 }

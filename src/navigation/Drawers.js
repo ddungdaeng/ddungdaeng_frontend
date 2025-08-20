@@ -1,62 +1,53 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { View, TouchableOpacity, StyleSheet, Alert } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native";
+
+import { PADDING } from "../constants/constants";
+import colors from "../styles/colors";
+import Left from "../assets/ic-left.svg";
 
 import TopTabs from "./TopTabs";
-import CustomText from "../components/common/CustomText";
-import colors from "../styles/colors";
-
 import Mypage from "../screens/drawers/Mypage";
 import Settings from "../screens/drawers/Settings";
 import FamilyMemberManagement from "../screens/drawers/FamilyMemberManagement";
 import HealthReportCollection from "../screens/drawers/HealthReportCollection";
 import DogProfileManagement from "../screens/drawers/DogProfileManagement";
-import DogRegistration from "../screens/DogRegistration";
 
 const Drawer = createDrawerNavigator();
 
 const Drawers = () => {
-  const goAlert = () => Alert.alert("알람입니당~");
-
-  const Header = ({ navigation }) => {
-    return (
-      <View style={styles.header}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("TopTabs", { screen: "대시보드" })}
-        >
-          <CustomText w="bold" style={styles.title}>
-            LOGO
-          </CustomText>
-        </TouchableOpacity>
-
-        <View style={styles.rightIcons}>
-          {/*알람*/}
-          <TouchableOpacity onPress={goAlert}>
-            <Ionicons name="notifications-outline" size={24} color="black" />
-          </TouchableOpacity>
-          {/*햄버거바*/}
-          <TouchableOpacity
-            onPress={() => navigation.toggleDrawer()}
-            style={{ marginLeft: 16 }}
-          >
-            <Ionicons name="menu" size={28} color="black" />
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  };
-
   return (
     <Drawer.Navigator
-      initialRouteName="TopTabs" //앱 실행 시 처음으로 보여줄 스크린을 TopTabs으로 지정
-      screenOptions={({ navigation }) => ({
-        header: () => <Header navigation={navigation} />,
+      initialRouteName="TopTabs"
+      screenOptions={({ navigation, route }) => ({
+        headerShown: route.name !== "TopTabs",
+        headerTitle: "",
+        headerStatusBarHeight: 0, //상태바 높이를 0으로
+        headerStyle: {
+          height: 48,
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+
+        headerLeft: () => (
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={{
+              marginLeft: 14,
+              paddingHorizontal: 10,
+              paddingTop: 20,
+            }}
+          >
+            <Left />
+          </TouchableOpacity>
+        ),
+        headerRight: () => null, //Drawer 아이콘 제거
+        // Drawer 설정
         drawerPosition: "right",
-        drawerActiveTintColor: "white", //선택된 항목의 글씨 색상
+        drawerActiveTintColor: "white",
         drawerActiveBackgroundColor: colors.gray3,
         drawerLabelStyle: {
-          color: "black", //기본 글씨 색상
+          color: colors.Text_default,
         },
       })}
     >
@@ -65,55 +56,47 @@ const Drawers = () => {
         component={TopTabs}
         options={{
           title: "홈",
-          drawerItemStyle: { display: "none" }, // 드로어에서 숨김
+          drawerItemStyle: { display: "none" },
         }}
       />
+
       <Drawer.Screen
         name="DogProfileManagement"
         component={DogProfileManagement}
-        options={{ title: "반려견 프로필 관리" }}
+        options={{
+          title: "반려견 프로필 관리",
+        }}
       />
       <Drawer.Screen
         name="FamilyMemberManagement"
         component={FamilyMemberManagement}
-        options={{ title: "가족 구성원 관리" }}
+        options={{
+          title: "가족 구성원 관리",
+        }}
       />
       <Drawer.Screen
         name="HealthReportCollection"
         component={HealthReportCollection}
-        options={{ title: "건강 리포트 모아보기" }}
+        options={{
+          title: "건강 리포트 모아보기",
+        }}
       />
       <Drawer.Screen
         name="Mypage"
         component={Mypage}
-        options={{ title: "마이페이지" }}
+        options={{
+          title: "마이페이지",
+        }}
       />
       <Drawer.Screen
         name="Settings"
         component={Settings}
-        options={{ title: "설정" }}
+        options={{
+          title: "설정",
+        }}
       />
     </Drawer.Navigator>
   );
 };
 
 export default Drawers;
-
-const styles = StyleSheet.create({
-  header: {
-    height: 60,
-    backgroundColor: "#fff",
-    paddingHorizontal: 18,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  title: {
-    fontSize: 22,
-    color: colors.primary1,
-  },
-  rightIcons: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-});

@@ -43,8 +43,6 @@ export default function Root() {
             options={{
               gestureEnabled: true,
               headerShown: false,
-              headerTitle: "카카오 로그인",
-              headerBackTitle: "뒤로",
             }}
           />
           <RootStack.Screen
@@ -53,8 +51,6 @@ export default function Root() {
             options={{
               gestureEnabled: true,
               headerShown: false,
-              headerTitle: "카카오 로그인 리다이렉트",
-              headerBackTitle: "뒤로",
             }}
           />
           <RootStack.Screen

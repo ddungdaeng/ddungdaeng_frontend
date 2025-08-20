@@ -25,6 +25,8 @@ export type RootStackParamList = {
 };
 
 export type DrawerParamList = {
+  TopTabs: undefined;
+  DogProfileManagement: undefined;
   HealthReportCollection: undefined;
   // 다른 Drawer 스크린들...(아직..)
 };
