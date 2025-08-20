@@ -13,8 +13,8 @@ const RootStack = createNativeStackNavigator();
 
 export default function Root() {
   //나중에 AsyncStorage나 상태관리로 체크
-  const isFirstLaunch = true; // 첫 실행 여부
-  const hasDogRegistered = false; // 반려견 등록 여부
+  const isFirstLaunch = false; // 첫 실행 여부
+  const hasDogRegistered = true; // 반려견 등록 여부
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
@@ -25,7 +25,7 @@ export default function Root() {
         }}
         // 초기 화면 결정 로직
         initialRouteName={
-          !isFirstLaunch && hasDogRegistered ? "MainApp" : "Onboarding"
+          !isFirstLaunch && hasDogRegistered ? "Main" : "Onboarding"
         }
       >
         {/* 온보딩 플로우 */}
