@@ -8,7 +8,7 @@ import CustomText from "./CustomText";
 import { PADDING } from "../../constants/constants";
 
 export default function Header() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
 
   const goAlert = () => Alert.alert("알람입니당~");
   const goToDashboard = () => {
