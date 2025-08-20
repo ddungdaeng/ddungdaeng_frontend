@@ -12,7 +12,9 @@ export default function Header() {
 
   const goAlert = () => Alert.alert("알람입니당~");
   const goToDashboard = () => {
-    navigation.jumpTo("대시보드");
+    navigation.navigate("TopTabs", {
+      screen: "대시보드",
+    });
   };
   return (
     <View style={styles.header}>
