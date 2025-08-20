@@ -21,14 +21,21 @@ const Drawers = () => {
       initialRouteName="TopTabs"
       screenOptions={({ navigation, route }) => ({
         headerShown: route.name !== "TopTabs",
-        headerTitle: "",
+        headerTitle: route.name === "Settings" ? "설정" : "",
         headerStatusBarHeight: 0, //상태바 높이를 0으로
         headerStyle: {
           height: 48,
           elevation: 0,
           shadowOpacity: 0,
         },
-
+        headerTitleContainerStyle: {
+          justifyContent: "flex-end", // 바닥 정렬
+        },
+        headerTitleStyle: {
+          fontSize: 18,
+          color: colors.Text_default,
+          fontFamily: "Pretendard-SemiBold",
+        },
         headerLeft: () => (
           <TouchableOpacity
             onPress={() => navigation.goBack()}
