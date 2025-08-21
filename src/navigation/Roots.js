@@ -1,13 +1,22 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
+
 import colors from "../styles/colors";
+
 import Drawers from "./Drawers";
+
 import Onboarding from "../screens/Onboarding";
 import DogRegistration from "../screens/DogRegistration";
 import HealthReportDetail from "../screens/drawers/HealthReportDetail";
 import KaKaoLoginWebview from "../components/login/KaKaoLoginWebview";
 import KaKaoLoginRedirect from "../components/login/KaKaoLoginRedirect";
+
+import Inquiry from "../screens/settings/Inquiry";
+import Feedback from "../screens/settings/Feedback";
+import Terms from "../screens/settings/Terms";
+import Privacy from "../screens/settings/Privacy";
+import License from "../screens/settings/License";
 
 const RootStack = createNativeStackNavigator();
 
@@ -82,7 +91,54 @@ export default function Root() {
               headerBackTitle: "뒤로",
             }}
           />
-          {/* 추가 모달 화면들을 여기에 */}
+
+          {/* todo: 나중에 기획 나오면 다시 수정.*/}
+          {/* 설정 화면들 -> 모달인지는 모르겠음.*/}
+          <RootStack.Screen
+            name="Inquiry"
+            component={Inquiry}
+            options={{
+              headerShown: true,
+              headerTitle: "문의하기",
+              headerBackTitle: "뒤로",
+            }}
+          />
+          <RootStack.Screen
+            name="Feedback"
+            component={Feedback}
+            options={{
+              headerShown: true,
+              headerTitle: "피드백 보내기",
+              headerBackTitle: "뒤로",
+            }}
+          />
+          <RootStack.Screen
+            name="Terms"
+            component={Terms}
+            options={{
+              headerShown: true,
+              headerTitle: "이용약관",
+              headerBackTitle: "뒤로",
+            }}
+          />
+          <RootStack.Screen
+            name="Privacy"
+            component={Privacy}
+            options={{
+              headerShown: true,
+              headerTitle: "개인정보 처리방침",
+              headerBackTitle: "뒤로",
+            }}
+          />
+          <RootStack.Screen
+            name="License"
+            component={License}
+            options={{
+              headerShown: true,
+              headerTitle: "오픈소스 라이선스",
+              headerBackTitle: "뒤로",
+            }}
+          />
         </RootStack.Group>
       </RootStack.Navigator>
     </SafeAreaView>
