@@ -12,6 +12,7 @@ import SadCharacter from "../assets/sadCharacter.svg";
 import DdungdaengTypo from "../assets/ddungdaeng.svg";
 import KakaoIcon from "../assets/ic-kakao.svg";
 import NextFixedButton from "../components/common/NextFixedButton";
+import { login } from "@react-native-kakao/user";
 
 interface OnboardingProps {
   navigation: NavigationProp;
@@ -27,11 +28,6 @@ const Onboarding: React.FC<OnboardingProps> = ({ navigation }) => {
     if (currIndex < 4) {
       swiper.current?.scrollBy(1, true);
     }
-  };
-
-  const handleKakaoLogin = (): void => {
-    // 카카오 로그인 로직
-    navigation.navigate("KaKaoLoginWebview");
   };
 
   return (
@@ -88,7 +84,7 @@ const Onboarding: React.FC<OnboardingProps> = ({ navigation }) => {
         <View style={styles.bottomButtonWrap}>
           <TouchableOpacity
             style={styles.lastButton}
-            onPress={handleKakaoLogin}
+            onPress={() => login().then(console.log)}
           >
             <KakaoIcon />
             <CustomText w="bold" style={styles.lastButtonText}>

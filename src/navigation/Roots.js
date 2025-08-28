@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -18,12 +18,18 @@ import Terms from "../screens/settings/Terms";
 import Privacy from "../screens/settings/Privacy";
 import License from "../screens/settings/License";
 
+import { initializeKakaoSDK } from "@react-native-kakao/core";
+
 const RootStack = createNativeStackNavigator();
 
 export default function Root() {
   //나중에 AsyncStorage나 상태관리로 체크
-  const isFirstLaunch = false; // 첫 실행 여부
-  const hasDogRegistered = true; // 반려견 등록 여부
+  const isFirstLaunch = true; // 첫 실행 여부
+  const hasDogRegistered = false; // 반려견 등록 여부
+
+  useEffect(() => {
+    initializeKakaoSDK("");
+  });
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
