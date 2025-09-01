@@ -1,0 +1,45 @@
+export default {
+  expo: {
+    name: "ddungdaeng-frontend",
+    slug: "ddungdaeng-frontend",
+    version: "1.0.0",
+    web: {
+      bundler: "metro",
+    },
+    android: {
+      package: "com.anonymous.ddungdaengfrontend",
+    },
+    ios: {
+      bundleIdentifier: "com.anonymous.ddungdaengfrontend",
+    },
+    plugins: [
+      "expo-font",
+      [
+        "expo-build-properties",
+        {
+          android: {
+            extraMavenRepos: [
+              "https://devrepo.kakao.com/nexus/content/groups/public/",
+            ],
+            newArchEnabled: true,
+          },
+          ios: {
+            newArchEnabled: true,
+          },
+        },
+      ],
+      [
+        "@react-native-kakao/core",
+        {
+          nativeAppKey: process.env.EXPO_PUBLIC_APP_KEY,
+          android: {
+            authCodeHandlerActivity: true,
+          },
+          ios: {
+            handleKakaoOpenUrl: true,
+          },
+        },
+      ],
+    ],
+  },
+};

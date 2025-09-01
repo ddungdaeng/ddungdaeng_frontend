@@ -1,5 +1,8 @@
 import { Dimensions } from "react-native";
 
+export const TOKEN_KEY = "jwt_token";
+export const REFRESH_TOKEN = "refresh_token";
+
 //스크린 공통 너비 계산
 export const { width: screenWidth } = Dimensions.get("window");
 export const PADDING = 24; //스크린 패딩

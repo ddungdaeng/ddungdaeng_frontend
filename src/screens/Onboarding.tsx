@@ -12,7 +12,7 @@ import SadCharacter from "../assets/sadCharacter.svg";
 import DdungdaengTypo from "../assets/ddungdaeng.svg";
 import KakaoIcon from "../assets/ic-kakao.svg";
 import NextFixedButton from "../components/common/NextFixedButton";
-import { login } from "@react-native-kakao/user";
+import { kakaoLogin } from "../services/AuthService";
 
 interface OnboardingProps {
   navigation: NavigationProp;
@@ -27,6 +27,14 @@ const Onboarding: React.FC<OnboardingProps> = ({ navigation }) => {
     // 마지막 전까지는 다음 슬라이드로 이동
     if (currIndex < 4) {
       swiper.current?.scrollBy(1, true);
+    }
+  };
+
+  const handleKakaoLogin = async (): Promise<void> => {
+    const success = await kakaoLogin();
+    if (success) {
+      console.log("로그인 성공");
+      navigation.navigate("Main");
     }
   };
 
@@ -84,7 +92,7 @@ const Onboarding: React.FC<OnboardingProps> = ({ navigation }) => {
         <View style={styles.bottomButtonWrap}>
           <TouchableOpacity
             style={styles.lastButton}
-            onPress={() => login().then(console.log)}
+            onPress={handleKakaoLogin}
           >
             <KakaoIcon />
             <CustomText w="bold" style={styles.lastButtonText}>

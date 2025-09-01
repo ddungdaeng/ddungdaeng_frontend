@@ -1,35 +1,64 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
+
+import { initializeKakaoSDK } from "@react-native-kakao/core";
+import { checkAuthStatus } from "../services/AuthService";
 
 import colors from "../styles/colors";
 
 import Drawers from "./Drawers";
-
 import Onboarding from "../screens/Onboarding";
 import DogRegistration from "../screens/DogRegistration";
 import HealthReportDetail from "../screens/drawers/HealthReportDetail";
-import KaKaoLoginWebview from "../components/login/KaKaoLoginWebview";
-import KaKaoLoginRedirect from "../components/login/KaKaoLoginRedirect";
-
 import Inquiry from "../screens/settings/Inquiry";
 import Feedback from "../screens/settings/Feedback";
 import Terms from "../screens/settings/Terms";
 import Privacy from "../screens/settings/Privacy";
 import License from "../screens/settings/License";
 
-import { initializeKakaoSDK } from "@react-native-kakao/core";
-
 const RootStack = createNativeStackNavigator();
 
 export default function Root() {
+  // 상태 관리
+  const [isLoading, setIsLoading] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   //나중에 AsyncStorage나 상태관리로 체크
-  const isFirstLaunch = true; // 첫 실행 여부
   const hasDogRegistered = false; // 반려견 등록 여부
 
   useEffect(() => {
-    initializeKakaoSDK("");
-  });
+    initializeApp();
+  }, []);
+
+  const initializeApp = async () => {
+    try {
+      // 1. 카카오 SDK 초기화
+      await initializeKakaoSDK(process.env.EXPO_PUBLIC_APP_KEY);
+
+      // 2. 인증 상태 확인
+      const authStatus = await checkAuthStatus();
+      setIsAuthenticated(authStatus);
+
+      console.log("앱 초기화 완료, 인증 상태:", authStatus);
+    } catch (error) {
+      console.error("앱 초기화 오류:", error);
+      setIsAuthenticated(false);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // 초기 화면 결정 로직
+  const getInitialRouteName = () => {
+    if (isAuthenticated && hasDogRegistered) {
+      return "Main";
+    } else if (isAuthenticated && !hasDogRegistered) {
+      return "DogRegistration";
+    } else {
+      return "Onboarding"; // 인증되지 않은 사용자는 온보딩부터
+    }
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
@@ -38,10 +67,7 @@ export default function Root() {
           headerShown: false,
           animation: "slide_from_right", //전환 애니메이션
         }}
-        // 초기 화면 결정 로직
-        initialRouteName={
-          !isFirstLaunch && hasDogRegistered ? "Main" : "Onboarding"
-        }
+        initialRouteName={getInitialRouteName()}
       >
         {/* 온보딩 플로우 */}
         <RootStack.Group>
@@ -50,22 +76,6 @@ export default function Root() {
             component={Onboarding}
             options={{
               gestureEnabled: false, // 뒤로가기 제스처 비활성화
-            }}
-          />
-          <RootStack.Screen
-            name="KaKaoLoginWebview"
-            component={KaKaoLoginWebview}
-            options={{
-              gestureEnabled: true,
-              headerShown: false,
-            }}
-          />
-          <RootStack.Screen
-            name="KaKaoLoginRedirect"
-            component={KaKaoLoginRedirect}
-            options={{
-              gestureEnabled: true,
-              headerShown: false,
             }}
           />
           <RootStack.Screen
@@ -98,8 +108,7 @@ export default function Root() {
             }}
           />
 
-          {/* todo: 나중에 기획 나오면 다시 수정.*/}
-          {/* 설정 화면들 -> 모달인지는 모르겠음.*/}
+          {/* 설정 화면들 */}
           <RootStack.Screen
             name="Inquiry"
             component={Inquiry}
