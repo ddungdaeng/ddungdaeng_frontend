@@ -120,3 +120,35 @@ export const chartData = [
     barColor: "#BCFFFE",
   },
 ];
+
+//마이페이지
+export const profileData = {
+  profileImage:
+    "https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20230530164604_23407b9f0798dca30e3d5be5968421b4.jpg",
+  name: "김운학",
+  petName: "댕댕이",
+};
+
+//마이페이지-통계
+export const statsData = {
+  totalRecords: 3,
+  walkDays: 1,
+  weightRecords: 3,
+};
+
+//마이페이지-오늘의 목표 달성률
+export const pieData = [
+  { value: 80, color: colors.primary1 },
+  { value: 30, color: colors.gray300 },
+];
+
+//마이페이지-이번주 목표 달성도
+export const weeklyData = [
+  { value: 3, label: "월" },
+  { value: 3, label: "화" },
+  { value: 3, label: "수" },
+  { value: 3, label: "목" },
+  { value: 5, label: "금", frontColor: colors.primary1 },
+  { value: 4, label: "토", frontColor: colors.primary1 },
+  { value: 3, label: "일" },
+];

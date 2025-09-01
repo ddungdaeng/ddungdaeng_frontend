@@ -6,9 +6,10 @@ const colors = {
   gray3: "#ABABAB",
   gray4: "#E2E2E2",
   gray5: "#F3F4F6", //임의로 넣음
-  black: "#000000", 
+  black: "#000000",
   white: "#FFFFFF",
   red: "#FF5252",
+  pink: "#FF9C9C",
 
   //gray: Symantic color
   Text_default: "#232527",
@@ -24,7 +25,8 @@ const colors = {
   Border_strong: "#a0a0a0",
   Border_disabled: "#f5f5f5",
 
-
+  gray200: "#F5F5F5",
+  gray300: "#efefef",
 };
 
 export default colors;

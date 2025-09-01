@@ -72,8 +72,8 @@ export default function AccountSection() {
   };
 
   return (
-    <View style={styles.section}>
-      <CustomText variant="body1" style={styles.sectionTitle}>
+    <View style={styles.container}>
+      <CustomText variant="body1" style={styles.title}>
         내 계정 관리
       </CustomText>
 
@@ -91,14 +91,14 @@ export default function AccountSection() {
 }
 
 const styles = StyleSheet.create({
-  section: {
+  container: {
     width: "100%",
     backgroundColor: colors.Border_disabled,
     borderRadius: 10,
     paddingVertical: 15,
     paddingHorizontal: 18,
   },
-  sectionTitle: {
+  title: {
     marginBottom: 12,
   },
   menuItem: {

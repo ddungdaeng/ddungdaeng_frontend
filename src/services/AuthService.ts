@@ -26,17 +26,16 @@ export const kakaoLogin = async (): Promise<boolean> => {
     //JWT 토큰 저장 AsyncStorage
     if (response.status === 200) {
       const jwtToken = response.data.result?.accessToken;
-      console.log("추출한 JWT 토큰:", jwtToken);
 
       if (jwtToken) {
         await AsyncStorage.setItem(TOKEN_KEY, jwtToken);
-        console.log("JWT 토큰 저장 완료");
+        console.log("JWT 토큰 저장 완료", jwtToken);
 
         //리프레시 토큰 저장
         const refreshToken = response.data.result?.refreshToken;
         if (refreshToken) {
           await AsyncStorage.setItem(REFRESH_TOKEN, refreshToken);
-          console.log("refresh 토큰 저장 완료");
+          console.log("refresh 토큰 저장 완료", refreshToken);
         }
         return true; // 로그인 성공
       } else {
