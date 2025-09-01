@@ -2,6 +2,8 @@
 #
 .DS_Store
 
+ios/*/Info.plist
+
 # Xcode
 #
 build/
