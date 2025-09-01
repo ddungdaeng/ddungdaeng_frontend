@@ -69,8 +69,6 @@ export const stackData = [
   },
 ];
 
-export const radarData = [70, 80, 60, 75, 65];
-
 //healthChart.tsx
 export const chartData = [
   {

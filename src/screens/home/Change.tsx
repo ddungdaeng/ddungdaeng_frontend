@@ -4,11 +4,9 @@ import CustomText from "../../components/common/CustomText";
 import colors from "../../styles/colors";
 import {
   barData,
-  radarData,
   walkData,
   weightData,
 } from "../../components/common/mockupData";
-import RadarChartCard from "../../components/home/change/RadarChartCard";
 import LineChartCard from "../../components/home/change/LineChartCard";
 import BarChartCard from "../../components/home/change/BarChartCard";
 import { PADDING } from "../../constants/constants";
@@ -35,9 +33,6 @@ export default function Change() {
         <CustomText w="semibold" style={styles.title}>
           얼마나 채웠개?
         </CustomText>
-
-        {/* 방사형 차트 */}
-        <RadarChartCard data={radarData} />
 
         {/* 체중 변화 */}
         <LineChartCard
